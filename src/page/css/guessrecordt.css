@@ -1,0 +1,38 @@
+.gdiv-item{
+    height:90px;
+    left: 3%;
+    right: 3%;
+    background-color: white;
+    width: 94%;
+    position: absolute;
+    border-radius: 5px;
+}
+.gp-name{
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 15px;
+    color: #333;
+    font-size: 15px;
+}
+.gp-number{
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 45px;
+    color: #bbb;
+    font-size: 11px;
+}
+.gp-time{
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 67px;
+    color: #bbb;
+    font-size: 11px;
+}
+.gp-state{
+    float: right;
+    margin-right: 15px;
+    margin-top: 0px;
+    font-size: 11px;
+    line-height: 100px;
+    color: brown;
+}

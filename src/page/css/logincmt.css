@@ -1,0 +1,13 @@
+.p-register{
+    color: #444;
+    font-size: 14px;
+    margin-top: 5px;
+    position: absolute;
+    text-align: center;
+    right: 10px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #444;
+    width: 30px;
+
+}
