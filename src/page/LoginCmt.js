@@ -34,15 +34,15 @@ class LoginCmt extends Component {
 
     }
     submitClick(){
-        let url = glo.urlhttp + '/api/v1/user/login'
+        let url = glo.urlhttp + '/user/api/v1/user/login'  ///user/api/v1/register
         console.log("111:" + url)
 
-        if(this.refs.phone.value == ""){
-            this.refs.phone.focus()
+        if(this.refs.loginphone.value == ""){
+            this.refs.loginphone.focus()
             return
         }
-        if(this.refs.password.value == ""){
-            this.refs.password.focus()
+        if(this.refs.loginpassword.value == ""){
+            this.refs.loginpassword.focus()
             return
         }
         this.setState({
@@ -50,10 +50,10 @@ class LoginCmt extends Component {
         })
         let tmpthis = this;
         let data = {
-            "password": this.refs.password.value,
-            "userName": this.refs.phone.value,
+            "password": this.refs.loginpassword.value,
+            "userName": this.refs.loginphone.value,
         };
-        console.log(this.refs.password.value + this.refs.phone.value)
+        console.log(this.refs.loginpassword.value + this.refs.loginphone.value)
 
         axios.post(url,data)
             .then(function (response) {
@@ -62,23 +62,25 @@ class LoginCmt extends Component {
                     animating:false,
                 })
                 console.log(JSON.stringify(response));
-                if(response.data.status == 200){
-                    this.props.history.goBack()
+                if(response.data.code == 200){
+                    localStorage.setItem(glo.UserName,data.userName)
+                    localStorage.setItem(glo.UserAddress,response.data.data.tbAccount.address)
+                    tmpthis.props.history.goBack()
                 }
                 else{
+                    console.log("111"+response.data.code);
                     glo.showToast('登录失败')
                 }
             })
             .catch(function (error) {
                 console.log(JSON.stringify(error));
-                glo.showToast('登录失败')
                 tmpthis.setState({
-                    animating:false,
+                    animating: false,
                 })
+                if(error != '{}') {
+                    glo.showToast('登录失败')
+                }
             });
-    }
-    btnRegisterClick(){
-
     }
     render(){
         return(
@@ -88,22 +90,20 @@ class LoginCmt extends Component {
                 </div>
                 <div className="div-first">
                     <div className="div3-img1">
-                        <input id="phone" type="number" className="input-text" placeholder="用户名"/>
+                        <input ref="loginphone" type="number" className="input-text" placeholder="用户名"/>
                     </div>
                 </div>
                 <div className="div1">
                     <div className="div3-img1">
-                        <input id="password" type="password" className="input-text" placeholder="密码"/>
+                        <input ref="loginpassword" type="password" className="input-text" placeholder="密码"/>
                     </div>
                 </div>
-                <footer>
                     <div className="div3" onClick={this.submitClick.bind(this)}>
                         登录
                     </div>
                     <Link to='/registeractcmt'>
-                        <p className="p-register" onClick={this.btnRegisterClick.bind(this)}>注册</p>
+                        <p className="p-register">注册</p>
                     </Link>
-                </footer>
             </div>
         );
     }

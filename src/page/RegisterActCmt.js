@@ -87,7 +87,7 @@ class RegisterActCmt extends Component {
      );
     }
     submitClick() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/api/v1/register'
+        let url = glo.urlhttp + '/user/api/v1/register'
         console.log("111:" + url)
 
         if(this.refs.phone.value == ""){
@@ -128,18 +128,22 @@ class RegisterActCmt extends Component {
             "userName": this.refs.phone.value,
         };
         console.log(this.refs.address.value + this.refs.password.value + this.refs.phone.value)
-
-        axios.post(url,data)
+        let config = {
+            headers: {'Content-Type': 'application/json'}
+        };  //添加请求头
+        axios.post(url,data,config)
             .then(function (response) {
                 // taskData = response
                 tmpthis.setState({
                     animating:false,
                 })
-                console.log(JSON.stringify(response));
-                if(response.data.status == 200){
-                    this.props.history.goBack()
-
+                console.log(response.data.code);
+                if(response.data.code == 200){
                     tmpthis.showToast('注册成功')
+                    tmpthis.props.history.goBack()
+                }
+                else if(response.data.code == 4001){
+                    tmpthis.showToast('用户已存在')
                 }
                 else{
                     tmpthis.showToast('注册失败')
@@ -147,10 +151,12 @@ class RegisterActCmt extends Component {
             })
             .catch(function (error) {
                 console.log(JSON.stringify(error));
-                tmpthis.showToast('注册失败')
                 tmpthis.setState({
-                    animating:false,
+                    animating: false,
                 })
+                if(error != '{}') {
+                    tmpthis.showToast('注册失败1')
+                }
             });
     }
 }

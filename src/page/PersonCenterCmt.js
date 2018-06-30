@@ -6,12 +6,21 @@ import './css/checkclerk.css'
 import defaultImg from '../img/defaultHeadImg.png'
 import {Link} from 'react-router-dom'
 import QRCode from 'qrcode-react'
+import * as glo from '../utils/globle'
 import { PullToRefresh, ListView, TabBar,Modal, List, Stepper,Button,WhiteSpace} from 'antd-mobile';
 import settingmore from '../img/setting_more.png'
 const prompt = Modal.prompt;
 class PersonCenterCmt extends Component {
     constructor(props) {
         super(props);
+        let uername = "立即登录"
+        let isnamehid = '立即登录进行竞猜'
+        if(localStorage.getItem(glo.UserName)){
+            uername = localStorage.getItem(glo.UserName)
+        }
+        if(localStorage.getItem(glo.UserAddress)){
+            isnamehid = localStorage.getItem(glo.UserAddress)
+        }
         this.state = {
             modal1:false,
             value: 'http://picturesofpeoplescanningqrcodes.tumblr.com/',
@@ -19,6 +28,8 @@ class PersonCenterCmt extends Component {
             fgColor: '#000000',
             bgColor: '#ffffff',
             level: 'L',
+            username:uername,
+            isnamehid:isnamehid,
         };
     }
 
@@ -51,9 +62,9 @@ class PersonCenterCmt extends Component {
                     <p className="p-title">个人中心</p>
                     <img src={defaultImg}/>
                     <Link to='/logincmt'>
-                        <div className="btn-login">立即登录</div>
+                        <div className="btn-login">{this.state.username}</div>
                     </Link>
-                    <div className="p-hint">立即登录进行竞猜</div>
+                    <div className="p-hint">{this.state.isnamehid}</div>
                 </div>
                 <div className="setting-div1">
                     <p className="p-setting">我的ETH</p>

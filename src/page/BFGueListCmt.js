@@ -21,7 +21,7 @@ class BFGueListCmt extends Component {
         });
         this.state = {
             dataArr:new Array(),
-            dataSource:dataSource.cloneWithRows([1,2,3,4,5,6,7,8]),
+            dataSource:dataSource.cloneWithRows(new Array()),
             refreshing: true,
             isLoading: true,
             height: document.documentElement.clientHeight,
@@ -30,7 +30,7 @@ class BFGueListCmt extends Component {
             modal1:false,
             val:0.01,
         };
-        // this.getTaskList()
+        this.getTaskList()
     }
     onClose = key => () => {
         this.setState({
@@ -68,8 +68,22 @@ class BFGueListCmt extends Component {
             modal1:true,
         })
     }
+    moreAddreeClick(){
+
+    }
     render() {
         const row = (rowData, sectionID, rowID) => {
+            // "handicapId": "H18063014255592679",
+            //     "team1": "德国",
+            //     "team2": "韩国",
+            //     "startTime": "2018-06-30T06:25:56.000+0000",
+            //     "endTime": "2018-06-30T06:25:56.000+0000",
+            //     "title": "test title",
+            //     "target3": 0.0002,
+            //     "target2": 0.0003,
+            //     "target1": 0.0005,
+            //     "status": 2
+            let obj = this.state.dataArr[rowID]
             if(rowID == 0){
                 return(
                     <div style={{width: '100%',height: '200px',backgroundColor:'green'}}>
@@ -79,31 +93,77 @@ class BFGueListCmt extends Component {
                 )
             }
             else {
+                let p1 = obj.target1/(obj.target1+obj.target2+obj.target3)
+                let p2 = obj.target2/(obj.target1+obj.target2+obj.target3)
+                let p3 = obj.target3/(obj.target1+obj.target2+obj.target3)
+
+                let arr = obj.endTime.split('.')
+                let tmpTime = ""
+                if(arr.length > 1){
+                    tmpTime = arr[0].replace(" ","T")
+                }
+                console.log("tmpTime: "+tmpTime)
+                var d = new Date(tmpTime)
+                let year="",mouth="",day=""
+                let hour="",minutes="",seconds=""
+                year = d.getFullYear()+""
+                if(d.getMonth() < 10){
+                    let mo = d.getMonth()+1
+                    mouth = "0"+mo
+                }
+                else{
+                    mouth = d.getMonth()+1+""
+                }
+                day = d.getDate()+""
+                if(d.getHours() < 10){
+                    hour = "0"+d.getHours()
+                }
+                else{
+                    hour = ""+d.getHours()
+                }
+                if(d.getMinutes() < 10){
+                    minutes = "0"+d.getMinutes()
+                }
+                else{
+                    minutes = ""+d.getMinutes()
+                }
+                if(d.getSeconds() < 10){
+                    seconds = "0"+d.getSeconds()
+                }
+                else{
+                    seconds = ""+d.getSeconds()
+                }
+                let timenum = mouth+"月"+day+"日 "+hour.toString()+":"+minutes.toString()
+                console.log(222222+timenum+ "  "+hour+"   "+minutes+"  "+seconds)
+
                 return (
                     <div style={{width: '100%', height: '260px', backgroundColor: '#EFF0F4'}}>
                         <div className="div-item">
-                            <p className="p-fname">小组赛</p>
-                            <p className="p-ftime">6月17日 18:00截止</p>
+                            <p className="p-fname">1/8决赛</p>
+                            <p className="p-ftime">{timenum}截止</p>
                             <div className="div-competition">
-                                <p className="p-country">德国 VS 墨西哥</p>
-                                <p className="p-number">本场已投注 100 ETH</p>
+                                <p className="p-country">{obj.team1} VS {obj.team2}</p>
+                                <p className="p-number">本场已投注 {obj.target1+obj.target2+obj.target3} ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 0)}>
-                                <p className="per-pbet">22%投注</p>
-                                <button className="per-bcon">德国赢</button>
-                                <p className="per-pcarve">瓜分22ETH</p>
+                                <p className="per-pbet">{p1}%投注</p>
+                                <button className="per-bcon">{obj.team1}赢</button>
+                                <p className="per-pcarve">瓜分{obj.target1}ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 1)}>
-                                <p className="per-pbet">53%投注</p>
+                                <p className="per-pbet">{p2}投注</p>
                                 <button className="per-cbcon">平</button>
-                                <p className="per-pcarve">瓜分53ETH</p>
+                                <p className="per-pcarve">瓜分{obj.target2}ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 2)}>
-                                <p className="per-pbet">25%投注</p>
-                                <button className="per-bcon">墨西哥赢</button>
-                                <p className="per-pcarve">瓜分25ETH</p>
+                                <p className="per-pbet">{p3}投注</p>
+                                <button className="per-bcon">{obj.team2}赢</button>
+                                <p className="per-pcarve">瓜分{obj.target3}ETH</p>
                             </div>
-                            <p className="p-address">本场比赛区块链地址0x1890920209029019029192919</p>
+                            <div onClick={this.moreAddreeClick.bind(this)}>
+                                <p className="p-address">本场比赛区块链地址0x{obj.handicapId}</p>
+                                <p className="p-addressmore">></p>
+                            </div>
                         </div>
                     </div>
                 );
@@ -140,7 +200,7 @@ class BFGueListCmt extends Component {
                 maskClosable={false}
                 onClose={this.onClose('modal1')}
                 title="详细规则"
-                footer={[{ text: '同意', onPress: () => { console.log('ok'); this.onClose('modal1')(); } ,style:{marginLeft:'15px',marginRight:'15px',marginBottom:'10px',borderRadius:'20px',lineHeight:'40px',height:'40px',backgroundColor:'#4C7CFA',color:'white'}}]}
+                footer={[{ text: '同意', onPress: () => { console.log('ok'); this.onClose('modal1')(); } ,style:{marginLeft:'15px',marginRight:'15px',marginBottom:'10px',borderRadius:'20px',lineHeight:'40px',height:'40px',backgroundColor:'#6b56f7',color:'white'}}]}
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
             >
                 <div style={{ textAlign:'left',height: '220px', lineHeight:'20px',color:'#262626',fontSize:'12px',overflow: 'scroll' }}>
@@ -175,7 +235,7 @@ class BFGueListCmt extends Component {
                         ETH数量
                     </List.Item>
                     <List.Item>
-                        <Button type="primary" onClick={this.onClose('modal2')}>买入</Button>
+                        <Button style={{backgroundColor:'#6b56f7'}} type="primary" onClick={this.onClose('modal2')}>买入</Button>
                     </List.Item>
                 </List>
             </Modal>
@@ -184,21 +244,27 @@ class BFGueListCmt extends Component {
         }
 
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/ksb-coin/api/v1/change/coin?limit=1000&owner='+queryper.userId
+        let url = glo.urlhttp + '/game/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'
         console.log("111:" + url)
         let tmpthis = this;
         let config = {
-            // headers: {'Content-Type': 'application/json'},
-            dataType: 'jsonp'
+            headers: {'Content-Type': 'application/json'},
         };  //添加请求头
         axios.get(url,config)
             .then(function (response) {
                 // taskData = response
                 if(response.data.code == 200){
+                    console.log(JSON.stringify(response));
                     // tmpthis.rData = genData();
+                    let data = {
+                        da:1,
+                    };
+                    let dataarr = response.data.data.content
+                    console.log('22222' + JSON.stringify(dataarr))
+                    dataarr.splice(0, 0, data)
                     tmpthis.setState({
-                        dataArr:response.data.data.content,
-                        dataSource: tmpthis.state.dataSource.cloneWithRows(response.data.data.content),
+                        dataArr:dataarr,
+                        dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
                         height: 10,
                         refreshing: false,
                         isLoading: false,
