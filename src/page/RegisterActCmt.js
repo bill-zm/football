@@ -32,7 +32,38 @@ class RegisterActCmt extends Component {
             this.showToast("手机号格式错误");
             return
         }
+    // /api/v1/register/sms
+        let url = glo.urlhttp + '/api/v1/register/sms?phNo='+this.refs.phone.value+'&type=1'
+        let tmpthis = this;
+        let config = {
+            headers: {'Content-Type': 'application/json'},
+        };  //添加请求头
+        console.log("111:" + url)
+        axios.get(url,config)
+            .then(function (response) {
+                // taskData = response
+                console.log(JSON.stringify(response));
+                // if(response.data.code == 200){
+                // tmpthis.rData = genData();
+                // let data = {
+                //     da:1,
+                // };
+                // let dataarr = response.data.content
+                // console.log('22222' + JSON.stringify(dataarr))
+                // dataarr.splice(0, 0, data)
+                // tmpthis.setState({
+                //     dataArr:dataarr,
+                //     dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                //     height: 10,
+                //     refreshing: false,
+                //     isLoading: false,
+                // })
+                // console.log("33333 : " + JSON.stringify(response.data.data.content));
+                // }
+            })
+            .catch(function (error) {
 
+            });
     }
     showToast(str) {
     Toast.info(str, 2);

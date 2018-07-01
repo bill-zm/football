@@ -10,6 +10,7 @@ import BFGueListCmt from './page/BFGueListCmt'
 import RegisterActCmt from './page/RegisterActCmt'
 import LoginCmt from './page/LoginCmt'
 import GuessRecordCmt from './page/GuessRecordCmt'
+import PanKouListCmt from './page/PanKouListCmt'
 import {httpurl} from './utils/globle'
 import {queryper}from './utils/QueryPer'
 function GetRequest() {
@@ -36,6 +37,7 @@ ReactDOM.render(
             <Route path="/registeractcmt" component={RegisterActCmt}/>
             <Route path="/logincmt" component={LoginCmt}/>
             <Route path="/guessrecordcmt" component={GuessRecordCmt}/>
+            <Route path="/handicap" component={GuessRecordCmt}/>
             <App/>
         </Switch>
     </HashRouter>

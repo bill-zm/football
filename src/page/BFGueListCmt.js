@@ -10,9 +10,12 @@ import axios from 'axios';
 import {queryper}from '../utils/QueryPer'
 import * as glo from '../utils/globle'
 import './css/fastcoinlist.css'
+import {Link} from 'react-router-dom'
 import { PullToRefresh, ListView, TabBar,Modal, List, Stepper,Button} from 'antd-mobile';
 const NUM_ROWS = 20;
-
+let type = 0;
+let selectNum = 1;
+let ethNum = 0;
 class BFGueListCmt extends Component {
     constructor(props) {
         super(props);
@@ -37,6 +40,66 @@ class BFGueListCmt extends Component {
             [key]: false,
         });
     }
+    onClose1 = key => () => {
+        this.setState({
+            [key]: false,
+        });
+        let url = glo.urlhttp + '/api/v1/fbg/game/bet'  ///user/api/v1/register
+        let data
+        let obj = this.state.dataArr[selectNum-1]
+        if(type == 0) {
+            data = {
+                address: obj.handicapId,
+                handicapId: obj.handicapId,
+                "target1Num": this.state.val,
+                "uid": "U18063014233480941"
+            }
+        }
+        else if(type == 1) {
+            data = {
+                address: obj.handicapId,
+                handicapId: obj.handicapId,
+                "target2Num": this.state.val,
+                "uid": "U18063014233480941"
+            }
+        }
+        else if(type == 2) {
+            data = {
+                address: obj.handicapId,
+                handicapId: obj.handicapId,
+                "target3Num": this.state.val,
+                "uid": "U18063014233480941"
+            }
+        }
+        console.log(JSON.stringify(data));
+        let tmpthis = this;
+        axios.post(url,data)
+            .then(function (response) {
+                // taskData = response
+                tmpthis.setState({
+                    animating:false,
+                })
+                console.log(JSON.stringify(response));
+                if(response.data.code == 200){
+                    localStorage.setItem(glo.UserName,data.userName)
+                    localStorage.setItem(glo.UserAddress,response.data.data.tbAccount.address)
+                    tmpthis.props.history.goBack()
+                }
+                else{
+                    console.log("111"+response.data.code);
+                    glo.showToast('登录失败')
+                }
+            })
+            .catch(function (error) {
+                console.log(JSON.stringify(error));
+                tmpthis.setState({
+                    animating: false,
+                })
+                if(error != '{}') {
+                    glo.showToast('登录失败')
+                }
+            });
+    }
     onChange = (val) => {
         console.log(val)
         // console.log(val);
@@ -57,7 +120,9 @@ class BFGueListCmt extends Component {
             refreshing: false,
         })
     };
-    betClick(index){
+    betClick(index,sel){
+        type = index
+        selectNum = sel
         console.log("111"+index)
         this.setState({
             modal2:true,
@@ -145,25 +210,27 @@ class BFGueListCmt extends Component {
                                 <p className="p-country">{obj.team1} VS {obj.team2}</p>
                                 <p className="p-number">本场已投注 {obj.target1+obj.target2+obj.target3} ETH</p>
                             </div>
-                            <div className="div-percent" onClick={this.betClick.bind(this, 0)}>
+                            <div className="div-percent" onClick={this.betClick.bind(this, 0,rowID)}>
                                 <p className="per-pbet">{p1}%投注</p>
                                 <button className="per-bcon">{obj.team1}赢</button>
                                 <p className="per-pcarve">瓜分{obj.target1}ETH</p>
                             </div>
-                            <div className="div-percent" onClick={this.betClick.bind(this, 1)}>
+                            <div className="div-percent" onClick={this.betClick.bind(this, 1,rowID)}>
                                 <p className="per-pbet">{p2}投注</p>
                                 <button className="per-cbcon">平</button>
                                 <p className="per-pcarve">瓜分{obj.target2}ETH</p>
                             </div>
-                            <div className="div-percent" onClick={this.betClick.bind(this, 2)}>
+                            <div className="div-percent" onClick={this.betClick.bind(this, 2,rowID)}>
                                 <p className="per-pbet">{p3}投注</p>
                                 <button className="per-bcon">{obj.team2}赢</button>
                                 <p className="per-pcarve">瓜分{obj.target3}ETH</p>
                             </div>
-                            <div onClick={this.moreAddreeClick.bind(this)}>
-                                <p className="p-address">本场比赛区块链地址0x{obj.handicapId}</p>
-                                <p className="p-addressmore">></p>
-                            </div>
+                            <Link to="/handicap">
+                                <div onClick={this.moreAddreeClick.bind(this)}>
+                                    <p className="p-address">本场比赛区块链地址0x{obj.handicapId}</p>
+                                    <p className="p-addressmore">></p>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 );
@@ -235,7 +302,7 @@ class BFGueListCmt extends Component {
                         ETH数量
                     </List.Item>
                     <List.Item>
-                        <Button style={{backgroundColor:'#6b56f7'}} type="primary" onClick={this.onClose('modal2')}>买入</Button>
+                        <Button style={{backgroundColor:'#6b56f7'}} type="primary" onClick={this.onClose1('modal2',1)}>买入</Button>
                     </List.Item>
                 </List>
             </Modal>
@@ -244,7 +311,7 @@ class BFGueListCmt extends Component {
         }
 
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/game/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'
+        let url = glo.urlhttp + '/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'
         console.log("111:" + url)
         let tmpthis = this;
         let config = {
@@ -253,13 +320,13 @@ class BFGueListCmt extends Component {
         axios.get(url,config)
             .then(function (response) {
                 // taskData = response
-                if(response.data.code == 200){
-                    console.log(JSON.stringify(response));
+                console.log(JSON.stringify(response));
+                // if(response.data.code == 200){
                     // tmpthis.rData = genData();
                     let data = {
                         da:1,
                     };
-                    let dataarr = response.data.data.content
+                    let dataarr = response.data.content
                     console.log('22222' + JSON.stringify(dataarr))
                     dataarr.splice(0, 0, data)
                     tmpthis.setState({
@@ -270,7 +337,7 @@ class BFGueListCmt extends Component {
                         isLoading: false,
                     })
                     console.log("33333 : " + JSON.stringify(response.data.data.content));
-                }
+                // }
             })
             .catch(function (error) {
 

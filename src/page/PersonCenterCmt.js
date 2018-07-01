@@ -7,6 +7,7 @@ import defaultImg from '../img/defaultHeadImg.png'
 import {Link} from 'react-router-dom'
 import QRCode from 'qrcode-react'
 import * as glo from '../utils/globle'
+import axios from 'axios';
 import { PullToRefresh, ListView, TabBar,Modal, List, Stepper,Button,WhiteSpace} from 'antd-mobile';
 import settingmore from '../img/setting_more.png'
 const prompt = Modal.prompt;
@@ -52,8 +53,41 @@ class PersonCenterCmt extends Component {
     withdraw(){
         prompt('提现', '', [
             { text: '取消' },
-            { text: '提现', onPress: value => console.log(`输入的内容:${value}`) },
+            { text: '提现', onPress: value => this.withDrawHttp(value) },
         ], 'default', '')
+    }
+    withDrawHttp(value){
+        let url = glo.urlhttp + '/api/v1/eth/send?uid=U18063014233480941'+'&value='+value
+        let tmpthis = this;
+        let config = {
+            headers: {'Content-Type': 'application/json'},
+        };  //添加请求头
+        console.log("111:" + url)
+        axios.get(url,config)
+            .then(function (response) {
+                // taskData = response
+                console.log(JSON.stringify(response));
+                // if(response.data.code == 200){
+                // tmpthis.rData = genData();
+                // let data = {
+                //     da:1,
+                // };
+                // let dataarr = response.data.content
+                // console.log('22222' + JSON.stringify(dataarr))
+                // dataarr.splice(0, 0, data)
+                // tmpthis.setState({
+                //     dataArr:dataarr,
+                //     dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                //     height: 10,
+                //     refreshing: false,
+                //     isLoading: false,
+                // })
+                // console.log("33333 : " + JSON.stringify(response.data.data.content));
+                // }
+            })
+            .catch(function (error) {
+
+            });
     }
     render() {
         return (

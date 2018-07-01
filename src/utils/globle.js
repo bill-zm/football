@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import { Modal, List, Stepper,Button, WhiteSpace, WingBlank ,Toast} from 'antd-mobile';
 
-export const urlhttp  = "http://192.168.1.125:8080";
+export const urlhttp  = "http://58.213.26.209:8082";
 export const UserName = "UserName"
 export const UserAddress = "UserAddress"
 export const showToast = (str) => {
