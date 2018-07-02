@@ -67,6 +67,8 @@
 .p-ethnum{
     float:right;
     width: 10px;
+    text-align: right;
     margin-right: 20px;
+    width: 200px;
     margin-top: 16px;
 }

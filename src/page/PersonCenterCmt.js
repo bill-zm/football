@@ -16,12 +16,17 @@ class PersonCenterCmt extends Component {
         super(props);
         let uername = "立即登录"
         let isnamehid = '立即登录进行竞猜'
+        let ethnum = 0
         if(localStorage.getItem(glo.UserName)){
             uername = localStorage.getItem(glo.UserName)
         }
         if(localStorage.getItem(glo.UserAddress)){
             isnamehid = localStorage.getItem(glo.UserAddress)
         }
+        if(localStorage.getItem(glo.Balance)){
+            ethnum = localStorage.getItem(glo.Balance)
+        }
+        this.getUserData()
         this.state = {
             modal1:false,
             value: 'http://picturesofpeoplescanningqrcodes.tumblr.com/',
@@ -31,14 +36,19 @@ class PersonCenterCmt extends Component {
             level: 'L',
             username:uername,
             isnamehid:isnamehid,
+            ethnum:ethnum,
         };
+      console.log('55555'+this.props.num)
     }
 
     componentDidUpdate() {
 
     }
-    componentDidMount() {
+    componentDidMount(){
+        this.props.onRef(this)
+    }
 
+    componentWillMount() {
     }
     onClose = key => () => {
         this.setState({
@@ -57,7 +67,7 @@ class PersonCenterCmt extends Component {
         ], 'default', '')
     }
     withDrawHttp(value){
-        let url = glo.urlhttp + '/api/v1/eth/send?uid=U18063014233480941'+'&value='+value
+        let url = glo.urlhttp + '/eth/api/v1/eth/send?uid='+localStorage.getItem(glo.Uid)+'&value='+value
         let tmpthis = this;
         let config = {
             headers: {'Content-Type': 'application/json'},
@@ -67,7 +77,14 @@ class PersonCenterCmt extends Component {
             .then(function (response) {
                 // taskData = response
                 console.log(JSON.stringify(response));
-                // if(response.data.code == 200){
+
+                if(response.data.code == 200){
+                    glo.showToast('提现成功')
+
+                }
+                else{
+                    glo.showToast('提现失败')
+                }
                 // tmpthis.rData = genData();
                 // let data = {
                 //     da:1,
@@ -102,7 +119,7 @@ class PersonCenterCmt extends Component {
                 </div>
                 <div className="setting-div1">
                     <p className="p-setting">我的ETH</p>
-                    <p className="p-ethnum">10</p>
+                    <p className="p-ethnum">{this.state.ethnum}</p>
                 </div>
                 <Link to="/guessrecordcmt">
                     <div className="setting-div1">
@@ -142,6 +159,47 @@ class PersonCenterCmt extends Component {
                 </Modal>
             </div>
         );
+    }
+    getUserData(){
+        let url = glo.urlhttp + '/user/api/v1/account/info?accountId='+localStorage.getItem(glo.Uid)+'&address=""'
+        let tmpthis = this;
+        let config = {
+            headers: {'Content-Type': 'application/json'},
+        };  //添加请求头
+        console.log("111:" + url)
+        axios.get(url,config)
+            .then(function (response) {
+                // taskData = response
+                console.log(JSON.stringify(response));
+
+                if(response.data.code == 200){
+                    tmpthis.setState({
+                        ethnum:response.data.data.balance
+                    })
+                }
+                else{
+
+                }
+                // tmpthis.rData = genData();
+                // let data = {
+                //     da:1,
+                // };
+                // let dataarr = response.data.content
+                // console.log('22222' + JSON.stringify(dataarr))
+                // dataarr.splice(0, 0, data)
+                // tmpthis.setState({
+                //     dataArr:dataarr,
+                //     dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                //     height: 10,
+                //     refreshing: false,
+                //     isLoading: false,
+                // })
+                // console.log("33333 : " + JSON.stringify(response.data.data.content));
+                // }
+            })
+            .catch(function (error) {
+
+            });
     }
 }
 

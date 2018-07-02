@@ -93,7 +93,7 @@ class GuessRecordCmt extends Component {
                         </div>
                             <div style={{width: '100%', height: '50px', backgroundColor: 'white'}}>
                                 <p className="gppv-p">我的区块链地址</p>
-                                <p className="gpaddress-p">0x2222220020020202202020020</p>
+                                <p className="gpaddress-p">{localStorage.getItem(glo.UserAddress)}</p>
                             </div>
                         </div>
                     )
@@ -129,8 +129,6 @@ class GuessRecordCmt extends Component {
             else{
                 str = '已结束'
             }
-
-
             let arr = obj.startTime.split('.')
             let tmpTime = ""
             if(arr.length > 1){
@@ -273,9 +271,8 @@ class GuessRecordCmt extends Component {
             </div>
         )
     }
-
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/api/v1/fbg/game/bets?uid=U18063014233480941&hid=H18063014255592679'
+        let url = glo.urlhttp + '/game/api/v1/fbg/game/bets?uid='+localStorage.getItem(glo.Uid)
         console.log("111:" + url)
         let tmpthis = this;
         let config = {
@@ -291,10 +288,10 @@ class GuessRecordCmt extends Component {
                 let data = {
                     da:1,
                 };
-                let dataarr = response.data.content
+                let dataarr = response.data.data.content
                 console.log('22222' + JSON.stringify(dataarr))
                 dataarr.splice(0, 0, data)
-
+                if(response.data.code == 200){
                     tmpthis.setState({
                         dataArr:dataarr,
                         dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
@@ -303,7 +300,7 @@ class GuessRecordCmt extends Component {
                         isLoading: false,
                     })
                     console.log("33333 : " + JSON.stringify(response.data.data.content));
-                // }
+                }
             })
             .catch(function (error) {
 

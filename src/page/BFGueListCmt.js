@@ -44,34 +44,35 @@ class BFGueListCmt extends Component {
         this.setState({
             [key]: false,
         });
-        let url = glo.urlhttp + '/api/v1/fbg/game/bet'  ///user/api/v1/register
+        let url = glo.urlhttp + '/game/api/v1/fbg/game/bet'  ///user/api/v1/register
         let data
-        let obj = this.state.dataArr[selectNum-1]
+        let obj = this.state.dataArr[selectNum]
+        console.log(obj)
         if(type == 0) {
             data = {
-                address: obj.handicapId,
-                handicapId: obj.handicapId,
+                'address': obj.handicapId,
+                'handicapId': obj.handicapId,
                 "target1Num": this.state.val,
-                "uid": "U18063014233480941"
+                "uid": localStorage.getItem(glo.Uid)
             }
         }
         else if(type == 1) {
             data = {
-                address: obj.handicapId,
-                handicapId: obj.handicapId,
+                'address': obj.handicapId,
+                'handicapId': obj.handicapId,
                 "target2Num": this.state.val,
-                "uid": "U18063014233480941"
+                "uid": localStorage.getItem(glo.Uid)
             }
         }
         else if(type == 2) {
             data = {
-                address: obj.handicapId,
-                handicapId: obj.handicapId,
+                'address': obj.handicapId,
+                'handicapId': obj.handicapId,
                 "target3Num": this.state.val,
-                "uid": "U18063014233480941"
+                "uid": localStorage.getItem(glo.Uid)
             }
         }
-        console.log(JSON.stringify(data));
+        console.log('1111'+JSON.stringify(data) + obj.handicapId);
         let tmpthis = this;
         axios.post(url,data)
             .then(function (response) {
@@ -80,14 +81,13 @@ class BFGueListCmt extends Component {
                     animating:false,
                 })
                 console.log(JSON.stringify(response));
-                if(response.data.code == 200){
-                    localStorage.setItem(glo.UserName,data.userName)
-                    localStorage.setItem(glo.UserAddress,response.data.data.tbAccount.address)
-                    tmpthis.props.history.goBack()
+                if(response.data.data.code == 200){
+                    glo.showToast('投注成功')
+                    tmpthis.getTaskList()
                 }
                 else{
                     console.log("111"+response.data.code);
-                    glo.showToast('登录失败')
+                    glo.showToast('投注失败')
                 }
             })
             .catch(function (error) {
@@ -96,7 +96,7 @@ class BFGueListCmt extends Component {
                     animating: false,
                 })
                 if(error != '{}') {
-                    glo.showToast('登录失败')
+                    glo.showToast('投注失败')
                 }
             });
     }
@@ -158,9 +158,9 @@ class BFGueListCmt extends Component {
                 )
             }
             else {
-                let p1 = obj.target1/(obj.target1+obj.target2+obj.target3)
-                let p2 = obj.target2/(obj.target1+obj.target2+obj.target3)
-                let p3 = obj.target3/(obj.target1+obj.target2+obj.target3)
+                let p1 = (obj.target1/(obj.target1+obj.target2+obj.target3)).toFixed(2)
+                let p2 = obj.target2/(obj.target1+obj.target2+obj.target3).toFixed(2)
+                let p3 = obj.target3/(obj.target1+obj.target2+obj.target3).toFixed(2)
 
                 let arr = obj.endTime.split('.')
                 let tmpTime = ""
@@ -200,7 +200,7 @@ class BFGueListCmt extends Component {
                 }
                 let timenum = mouth+"月"+day+"日 "+hour.toString()+":"+minutes.toString()
                 console.log(222222+timenum+ "  "+hour+"   "+minutes+"  "+seconds)
-
+                console.log((obj.target1+obj.target2+obj.target3).toFixed(4));
                 return (
                     <div style={{width: '100%', height: '260px', backgroundColor: '#EFF0F4'}}>
                         <div className="div-item">
@@ -208,7 +208,7 @@ class BFGueListCmt extends Component {
                             <p className="p-ftime">{timenum}截止</p>
                             <div className="div-competition">
                                 <p className="p-country">{obj.team1} VS {obj.team2}</p>
-                                <p className="p-number">本场已投注 {obj.target1+obj.target2+obj.target3} ETH</p>
+                                <p className="p-number">本场已投注 {(obj.target1+obj.target2+obj.target3).toFixed(4)} ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 0,rowID)}>
                                 <p className="per-pbet">{p1}%投注</p>
@@ -225,7 +225,10 @@ class BFGueListCmt extends Component {
                                 <button className="per-bcon">{obj.team2}赢</button>
                                 <p className="per-pcarve">瓜分{obj.target3}ETH</p>
                             </div>
-                            <Link to="/handicap">
+                            <Link to={{
+                                    pathname: '/handicap',
+                                    query: {hid: obj.handicapId},
+                            }}>
                                 <div onClick={this.moreAddreeClick.bind(this)}>
                                     <p className="p-address">本场比赛区块链地址0x{obj.handicapId}</p>
                                     <p className="p-addressmore">></p>
@@ -311,7 +314,7 @@ class BFGueListCmt extends Component {
         }
 
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'
+        let url = glo.urlhttp + '/game/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'
         console.log("111:" + url)
         let tmpthis = this;
         let config = {
@@ -321,12 +324,12 @@ class BFGueListCmt extends Component {
             .then(function (response) {
                 // taskData = response
                 console.log(JSON.stringify(response));
-                // if(response.data.code == 200){
+                if(response.data.code == 200){
                     // tmpthis.rData = genData();
                     let data = {
                         da:1,
                     };
-                    let dataarr = response.data.content
+                    let dataarr = response.data.data.content
                     console.log('22222' + JSON.stringify(dataarr))
                     dataarr.splice(0, 0, data)
                     tmpthis.setState({
@@ -337,7 +340,7 @@ class BFGueListCmt extends Component {
                         isLoading: false,
                     })
                     console.log("33333 : " + JSON.stringify(response.data.data.content));
-                // }
+                }
             })
             .catch(function (error) {
 

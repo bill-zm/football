@@ -60,6 +60,7 @@ class App extends Component {
                     key="my"
                     selected={this.state.selectedTab === 'yellowTab'}
                     onPress={() => {
+                        this.child.getUserData()
                         this.setState({
                             selectedTab: 'yellowTab',
                         });
@@ -67,11 +68,14 @@ class App extends Component {
                         document.title = "个人中心"
                     }}
                 >
-                    <PersonCenterCmt />
+                    <PersonCenterCmt num={this.state.selectedTab} onRef={this.onRef} />
                 </TabBar.Item>
             </TabBar>
         </div>
     );
   }
+    onRef = (ref) => {
+        this.child = ref
+    }
 }
 export default App;

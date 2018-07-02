@@ -65,6 +65,8 @@ class LoginCmt extends Component {
                 if(response.data.code == 200){
                     localStorage.setItem(glo.UserName,data.userName)
                     localStorage.setItem(glo.UserAddress,response.data.data.tbAccount.address)
+                    localStorage.setItem(glo.Uid,response.data.data.userRelationship.uid)
+                    localStorage.setItem(glo.Balance,response.data.data.tbAccount.balance)
                     tmpthis.props.history.goBack()
                 }
                 else{

@@ -6,6 +6,8 @@ import { Modal, List, Stepper,Button, WhiteSpace, WingBlank ,Toast,ActivityIndic
 import './css/registeractcmt.css'
 import axios from 'axios';
 import * as glo from '../utils/globle'
+
+let authCode = ''
 class RegisterActCmt extends Component {
     constructor(pros){
         super(pros)
@@ -13,6 +15,7 @@ class RegisterActCmt extends Component {
             modal2:true,
             val:0.01,
             animating:false,
+            seconds:60,
         };
     }
     onClose = key => () => {
@@ -25,7 +28,23 @@ class RegisterActCmt extends Component {
         // console.log(val);
         this.setState({ val });
     }
+    timerStart(){
+        if(this.state.seconds == 0){
+            this.setState({
+                seconds: 60
+            })
+            clearInterval(this.timerID);
+        }
+        else {
+            this.setState({
+                seconds: this.state.seconds - 1
+            })
+        }
+    }
     authcodeClick(){
+        if(this.state.seconds != 60){
+            return
+        }
         var re = /^1\d{10}$/ //以1开始后面加10位数字
         if (re.test(this.refs.phone.value)) {
         } else {
@@ -33,7 +52,7 @@ class RegisterActCmt extends Component {
             return
         }
     // /api/v1/register/sms
-        let url = glo.urlhttp + '/api/v1/register/sms?phNo='+this.refs.phone.value+'&type=1'
+        let url = glo.urlhttp + '/user/api/v1/register/sms?phNo='+this.refs.phone.value+'&type=1'
         let tmpthis = this;
         let config = {
             headers: {'Content-Type': 'application/json'},
@@ -43,7 +62,16 @@ class RegisterActCmt extends Component {
             .then(function (response) {
                 // taskData = response
                 console.log(JSON.stringify(response));
-                // if(response.data.code == 200){
+                if(response.data.code == 200) {
+                    authCode = response.data.data
+                    tmpthis.timerID = setInterval(
+                        () => tmpthis.timerStart(),
+                        1000
+                    );
+                }
+                else {
+                    glo.showToast('发送失败')
+                }
                 // tmpthis.rData = genData();
                 // let data = {
                 //     da:1,
@@ -84,7 +112,7 @@ class RegisterActCmt extends Component {
                      <div className="div3-img2">
                          <input ref="authcode" type="text" className="div-auth-code" placeholder="验证码"/>
                      </div>
-                     <button className="div-psend" id="second-p" onClick={this.authcodeClick.bind(this)}>获取</button>
+                     <button className="div-psend" id="second-p" onClick={this.authcodeClick.bind(this)}>{(this.state.seconds==60)?'获取':this.state.seconds}</button>
                  </div>
 
                  <div className="div1">
@@ -129,6 +157,10 @@ class RegisterActCmt extends Component {
             this.refs.authcode.focus()
             return
         }
+        if(authCode != this.refs.authcode.value){
+            this.showToast('验证码输入错误')
+            return
+        }
         if(this.refs.password.value == ""){
             this.refs.password.focus()
             return
@@ -168,7 +200,7 @@ class RegisterActCmt extends Component {
                 tmpthis.setState({
                     animating:false,
                 })
-                console.log(response.data.code);
+                console.log(response);
                 if(response.data.code == 200){
                     tmpthis.showToast('注册成功')
                     tmpthis.props.history.goBack()

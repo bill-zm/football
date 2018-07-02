@@ -161,7 +161,7 @@ class PanKouListCmt extends Component {
     }
 
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/api/v1/fbg/game/bets?uid=U18063014233480941&hid=H18063014255592679'
+        let url = glo.urlhttp + '/api/v1/fbg/game/bets?uid='+localStorage.getItem(glo.Uid)+'&hid='+this.props.location.query.uid
         console.log("111:" + url)
         let tmpthis = this;
         let config = {
