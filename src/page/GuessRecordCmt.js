@@ -74,21 +74,21 @@ class GuessRecordCmt extends Component {
                     return(
                         <div style={{width: '100%', height: '150px', backgroundColor: '#6e56f8'}}>
                         <div style={{width: '100%', height: '100px', backgroundColor: '#6e56f8'}}>
+                            {/*<div className="gpdiv-top">*/}
+                                {/*<p className="gpnum-p">1</p>*/}
+                                {/*<p className="gptitle-p">猜中</p>*/}
+                            {/*</div>*/}
+                            {/*<div className="gpdiv-top">*/}
+                                {/*<p className="gpnum-p">1</p>*/}
+                                {/*<p className="gptitle-p">未猜中</p>*/}
+                            {/*</div>*/}
                             <div className="gpdiv-top">
-                                <p className="gpnum-p">1</p>
-                                <p className="gptitle-p">猜中</p>
+                                <p className="gpnum-p">{localStorage.getItem(glo.Spend)}</p>
+                                <p className="gptitle-p">押注总ETH</p>
                             </div>
                             <div className="gpdiv-top">
-                                <p className="gpnum-p">1</p>
-                                <p className="gptitle-p">未猜中</p>
-                            </div>
-                            <div className="gpdiv-top">
-                                <p className="gpnum-p">1</p>
-                                <p className="gptitle-p">押注总钻</p>
-                            </div>
-                            <div className="gpdiv-top">
-                                <p className="gpnum-p">3</p>
-                                <p className="gptitle-p">赢得总钻数</p>
+                                <p className="gpnum-p">{localStorage.getItem(glo.Win)}</p>
+                                <p className="gptitle-p">赢得总ETH</p>
                             </div>
                         </div>
                             <div style={{width: '100%', height: '50px', backgroundColor: 'white'}}>
@@ -123,6 +123,9 @@ class GuessRecordCmt extends Component {
                 teamstr = "我已投注"+ obj.target3Num +"个ETH压"+obj.team2+"赢"
             }
             let str = ""
+            // public static final byte STATUS_FREEZE = 1;
+            // public static final byte STATUS_NORMAL = 0;
+            // public static final byte STATUS_RESULT = 2
             if(obj.status == 0){
                 str = '竞猜中'
             }

@@ -38,6 +38,7 @@ ReactDOM.render(
             <Route path="/logincmt" component={LoginCmt}/>
             <Route path="/guessrecordcmt" component={GuessRecordCmt}/>
             <Route path="/handicap" component={GuessRecordCmt}/>
+            <Route path="/pankoulist" component={PanKouListCmt}/>
             <App/>
         </Switch>
     </HashRouter>

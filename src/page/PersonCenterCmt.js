@@ -67,6 +67,14 @@ class PersonCenterCmt extends Component {
         ], 'default', '')
     }
     withDrawHttp(value){
+        if(value == "" || value == undefined){
+            glo.showToast('请先输入ETH数量')
+            return
+        }
+        if(parseFloat(value) > parseFloat(localStorage.getItem(glo.Balance))){
+            glo.showToast('超出账户ETH数量')
+            return
+        }
         let url = glo.urlhttp + '/eth/api/v1/eth/send?uid='+localStorage.getItem(glo.Uid)+'&value='+value
         let tmpthis = this;
         let config = {
@@ -80,7 +88,7 @@ class PersonCenterCmt extends Component {
 
                 if(response.data.code == 200){
                     glo.showToast('提现成功')
-
+                    this.getUserData()
                 }
                 else{
                     glo.showToast('提现失败')
@@ -148,13 +156,13 @@ class PersonCenterCmt extends Component {
                 >
                     <div style={{ textAlign:'center',height: '240px', lineHeight:'20px',color:'#262626',fontSize:'12px',overflow: 'scroll' }}>
                         <QRCode
-                            value={this.props.qucodeurl}
+                            value='0x87bC630F9aaC634EBFf4A0adAf2d4Ec9Fe36519D'  //0x87bC630F9aaC634EBFf4A0adAf2d4Ec9Fe36519D
                             size={this.state.size}
                             fgColor={this.state.fgColor}
                             bgColor={this.state.bgColor}
                             level={this.state.level}
                         />
-                        <p>充值ETH地址</p>
+                        <p>充值ETH地址<br/>0x87bC630F9aaC634EBFf4A0adAf2d4Ec9Fe36519D</p>
                     </div>
                 </Modal>
             </div>

@@ -148,7 +148,18 @@
     height: 30px;
     font-size: 13px;
     border-width: 0px;
+    margin-top: 165px;
     color: white;
+    position: absolute;
+    opacity: 0.8;
+}
+.bf-topdiv{
+    /*background-image: url('../../img/football_eth.jpeg');*/
+    background:url('../../img/football_eth.jpeg')no-repeat;
+    width:100%;
+    height:100%;
+    background-size:100% 100%;
+    position:absolute;
 }
 .am-tab-bar::-webkit-scrollbar {
     display: none;

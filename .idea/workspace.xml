@@ -2,16 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55ff35e7-ad82-445c-a1a1-38db629395d2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/football_eth.jpeg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.84aac76a.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.84aac76a.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.16df993d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.16df993d.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/media/logo.5d5d9eef.svg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-scripts/config/paths.js" afterPath="$PROJECT_DIR$/node_modules/react-scripts/config/paths.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/BFGueListCmt.js" afterPath="$PROJECT_DIR$/src/page/BFGueListCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/GuessRecordCmt.js" afterPath="$PROJECT_DIR$/src/page/GuessRecordCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/LoginCmt.js" afterPath="$PROJECT_DIR$/src/page/LoginCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/PanKouListCmt.js" afterPath="$PROJECT_DIR$/src/page/PanKouListCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/PersonCenterCmt.js" afterPath="$PROJECT_DIR$/src/page/PersonCenterCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/RegisterActCmt.js" afterPath="$PROJECT_DIR$/src/page/RegisterActCmt.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/css/checkclerk.css" afterPath="$PROJECT_DIR$/src/page/css/checkclerk.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/css/fastcoinlist.css" afterPath="$PROJECT_DIR$/src/page/css/fastcoinlist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/css/guessrecordt.css" afterPath="$PROJECT_DIR$/src/page/css/guessrecordt.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/globle.js" afterPath="$PROJECT_DIR$/src/utils/globle.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,8 +42,8 @@
       <file leaf-file-name="RegisterActCmt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/RegisterActCmt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="208" column="33" lean-forward="true" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
+            <state relative-caret-position="199">
+              <caret line="123" column="39" lean-forward="false" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
               <folding>
                 <element signature="e#46#85#0" expanded="true" />
               </folding>
@@ -42,8 +54,8 @@
       <file leaf-file-name="globle.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/globle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="135">
+              <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#45#84#0" expanded="true" />
@@ -52,15 +64,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginCmt.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/LoginCmt.js">
+      <file leaf-file-name="logincmt.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/css/logincmt.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#92#131#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,12 +77,35 @@
       <file leaf-file-name="PersonCenterCmt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/PersonCenterCmt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="162" column="15" lean-forward="false" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="15" />
+            <state relative-caret-position="241">
+              <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="34" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#46#85#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BFGueListCmt.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/page/BFGueListCmt.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="337" column="22" lean-forward="true" selection-start-line="337" selection-start-column="22" selection-end-line="337" selection-end-column="22" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#46#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paths.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/config/paths.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,22 +113,9 @@
       <file leaf-file-name="checkclerk.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/css/checkclerk.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+            <state relative-caret-position="501">
+              <caret line="70" column="23" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BFGueListCmt.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/BFGueListCmt.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1505">
-              <caret line="90" column="17" lean-forward="true" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#46#85#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -104,12 +123,22 @@
       <file leaf-file-name="GuessRecordCmt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/GuessRecordCmt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="130" column="13" lean-forward="false" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+            <state relative-caret-position="449">
+              <caret line="271" column="26" lean-forward="false" selection-start-line="271" selection-start-column="26" selection-end-line="271" selection-end-column="26" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#46#85#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fastcoinlist.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/css/fastcoinlist.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2175">
+              <caret line="145" column="24" lean-forward="false" selection-start-line="145" selection-start-column="24" selection-end-line="145" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,35 +146,11 @@
       <file leaf-file-name="PanKouListCmt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/PanKouListCmt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state relative-caret-position="291">
+              <caret line="251" column="45" lean-forward="false" selection-start-line="251" selection-start-column="45" selection-end-line="251" selection-end-column="45" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#46#85#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="64" column="49" lean-forward="false" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,14 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gptitle-p</find>
-      <find>return</find>
-      <find>modal1</find>
-      <find>per-bcon</find>
-      <find>p-country</find>
-      <find>phone</find>
-      <find>submitClick</find>
-      <find>btnRegisterClick</find>
       <find>div3</find>
       <find>p-register</find>
       <find>p-address</find>
@@ -180,17 +177,26 @@
       <find>selectNum</find>
       <find>betClick</find>
       <find>Link</find>
-      <find>p-ethnum</find>
       <find>glo</find>
       <find>onClose1</find>
-      <find>glo.Uid</find>
       <find>uername</find>
-      <find>loginphone</find>
-      <find>onClose</find>
-      <find>tmpTime</find>
       <find>getUserData</find>
       <find>PersonCenterCmt</find>
+      <find>gpdiv-top</find>
+      <find>onClose</find>
+      <find>PanKouListCmt</find>
+      <find>link</find>
       <find>myName</find>
+      <find>loginphone</find>
+      <find>glo.Uid</find>
+      <find>qucodeurl</find>
+      <find>teamstr</find>
+      <find>tmpTime</find>
+      <find>withDrawHttp</find>
+      <find>p-ethnum</find>
+      <find>以太坊</find>
+      <find>btn-detail</find>
+      <find>handicapId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -199,20 +205,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/page/css/guessrecordt.css" />
         <option value="$PROJECT_DIR$/src/page/css/registeractcmt.css" />
         <option value="$PROJECT_DIR$/src/page/css/logincmt.css" />
-        <option value="$PROJECT_DIR$/src/page/css/fastcoinlist.css" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/page/RegisterActCmt.js" />
-        <option value="$PROJECT_DIR$/src/page/LoginCmt.js" />
-        <option value="$PROJECT_DIR$/src/utils/globle.js" />
-        <option value="$PROJECT_DIR$/src/page/PanKouListCmt.js" />
         <option value="$PROJECT_DIR$/src/page/css/checkclerk.css" />
-        <option value="$PROJECT_DIR$/src/page/BFGueListCmt.js" />
-        <option value="$PROJECT_DIR$/src/page/GuessRecordCmt.js" />
-        <option value="$PROJECT_DIR$/src/page/PersonCenterCmt.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/page/LoginCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/GuessRecordCmt.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/page/PanKouListCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/css/guessrecordt.css" />
+        <option value="$PROJECT_DIR$/src/page/PersonCenterCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/RegisterActCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/BFGueListCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/css/fastcoinlist.css" />
+        <option value="$PROJECT_DIR$/src/utils/globle.js" />
+        <option value="$PROJECT_DIR$/node_modules/react-scripts/config/paths.js" />
       </list>
     </option>
   </component>
@@ -317,6 +324,100 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="page" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="football" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -340,6 +441,11 @@
     <property name="node.js.selected.package.tslint" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/img" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -372,12 +478,12 @@
       <workItem from="1530236857701" duration="39726000" />
       <workItem from="1530374140649" duration="10467000" />
       <workItem from="1530449081060" duration="711000" />
-      <workItem from="1530493815828" duration="10363000" />
+      <workItem from="1530493815828" duration="23296000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62824000" />
+    <option name="totallyTimeSpent" value="75757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
@@ -430,8 +536,8 @@
         <state relative-caret-position="120">
           <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#92#131#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#92#131#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -501,7 +607,7 @@
         <state relative-caret-position="375">
           <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="34" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -550,8 +656,8 @@
         <state relative-caret-position="840">
           <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#92#131#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#92#131#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -637,16 +743,9 @@
         <state relative-caret-position="405">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#92#131#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#92#131#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/css/guessrecordt.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="75" column="21" lean-forward="false" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -654,13 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4875">
           <caret line="325" column="22" lean-forward="false" selection-start-line="325" selection-start-column="22" selection-end-line="325" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/css/logincmt.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -672,69 +764,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/css/fastcoinlist.css">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2145">
-          <caret line="143" column="29" lean-forward="false" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="29" />
+        <state relative-caret-position="220">
+          <caret line="585" column="0" lean-forward="false" selection-start-line="585" selection-start-column="0" selection-end-line="585" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/css/checkclerk.css">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="70" column="23" lean-forward="true" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PanKouListCmt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="318">
+          <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#46#85#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="39" column="34" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="34" />
+        <state relative-caret-position="300">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/LoginCmt.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+        <state relative-caret-position="288">
+          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#92#131#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#92#131#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/globle.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/qrcode-react/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#45#84#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/BFGueListCmt.js">
+    <entry file="file://$PROJECT_DIR$/src/page/css/guessrecordt.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1505">
-          <caret line="90" column="17" lean-forward="true" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+        <state relative-caret-position="242">
+          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/PanKouListCmt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="251" column="45" lean-forward="false" selection-start-line="251" selection-start-column="45" selection-end-line="251" selection-end-column="45" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#46#85#0" expanded="true" />
@@ -744,20 +832,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/GuessRecordCmt.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="130" column="13" lean-forward="false" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+        <state relative-caret-position="449">
+          <caret line="271" column="26" lean-forward="false" selection-start-line="271" selection-start-column="26" selection-end-line="271" selection-end-column="26" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#46#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/RegisterActCmt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="208" column="33" lean-forward="true" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
-          <folding>
             <element signature="e#46#85#0" expanded="true" />
           </folding>
         </state>
@@ -765,8 +843,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/PersonCenterCmt.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="162" column="15" lean-forward="false" selection-start-line="162" selection-start-column="4" selection-end-line="162" selection-end-column="15" />
+        <state relative-caret-position="241">
+          <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="34" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#46#85#0" expanded="true" />
@@ -774,12 +852,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/img/football_eth.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/RegisterActCmt.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="64" column="49" lean-forward="false" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+        <state relative-caret-position="199">
+          <caret line="123" column="39" lean-forward="false" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#46#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/css/fastcoinlist.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="145" column="24" lean-forward="false" selection-start-line="145" selection-start-column="24" selection-end-line="145" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/config/paths.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/css/logincmt.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/globle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#45#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/css/checkclerk.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="70" column="23" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/BFGueListCmt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="337" column="22" lean-forward="true" selection-start-line="337" selection-start-column="22" selection-end-line="337" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#46#85#0" expanded="true" />
           </folding>
         </state>
       </provider>

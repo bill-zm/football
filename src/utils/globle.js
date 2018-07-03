@@ -4,11 +4,15 @@
 import React, {Component} from 'react';
 import { Modal, List, Stepper,Button, WhiteSpace, WingBlank ,Toast} from 'antd-mobile';
 
-export const urlhttp  = "http://192.168.1.125:8090";
+export const urlhttp  = "http://47.52.226.34:8090";
 export const UserName = "UserName"
 export const UserAddress = "UserAddress"
 export const Uid = "Uid"
 export const Balance = "Balance"
+export const Spend = "Spend"
+export const Win = "Win"
+export const Obj = "Obj"
+
 export const showToast = (str) => {
     Toast.info(str, 2);
 }

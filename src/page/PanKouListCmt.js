@@ -13,6 +13,9 @@ import './css/guessrecordt.css'
 import { PullToRefresh, ListView, TabBar,Modal, List, Stepper,Button} from 'antd-mobile';
 const NUM_ROWS = 20;
 
+let hid = ""
+let team1 = ""
+let team2 = ""
 class PanKouListCmt extends Component {
     constructor(props) {
         super(props);
@@ -30,6 +33,28 @@ class PanKouListCmt extends Component {
             modal1:false,
             val:0.01,
         };
+        if(this.props.location.query){
+            let tmp = this.props.location.query.obj
+            if(tmp != undefined) {
+                hid = this.props.location.query.obj.handicapId
+                team1 = this.props.location.query.obj.team1
+                team2 = this.props.location.query.obj.team2
+                localStorage.setItem(glo.Obj,JSON.stringify(tmp))
+                console.log("222222:" + hid)
+            }
+            else{
+                hid = JSON.parse(localStorage.getItem(glo.Obj)).handicapId
+                team1 = JSON.parse(localStorage.getItem(glo.Obj)).team1
+                team2 = JSON.parse(localStorage.getItem(glo.Obj)).team2
+                console.log("111111:" + hid+team1+team2)
+            }
+        }
+        else{
+            hid = JSON.parse(localStorage.getItem(glo.Obj)).handicapId
+            team1 = JSON.parse(localStorage.getItem(glo.Obj)).team1
+            team2 = JSON.parse(localStorage.getItem(glo.Obj)).team2
+            console.log("111111:" + hid+team1+team2)
+        }
         this.getTaskList()
     }
     onClose = key => () => {
@@ -72,43 +97,159 @@ class PanKouListCmt extends Component {
         const row = (rowData, sectionID, rowID) => {
             if(rowID == 0){
                 return(
-                    <div style={{width: '100%', height: '150px', backgroundColor: '#6e56f8'}}>
-                        <div style={{width: '100%', height: '100px', backgroundColor: '#6e56f8'}}>
-                            <div className="gpdiv-top">
-                                <p className="gpnum-p">1</p>
-                                <p className="gptitle-p">猜中</p>
-                            </div>
-                            <div className="gpdiv-top">
-                                <p className="gpnum-p">1</p>
-                                <p className="gptitle-p">未猜中</p>
-                            </div>
-                            <div className="gpdiv-top">
-                                <p className="gpnum-p">1</p>
-                                <p className="gptitle-p">押注总钻</p>
-                            </div>
-                            <div className="gpdiv-top">
-                                <p className="gpnum-p">3</p>
-                                <p className="gptitle-p">赢得总钻数</p>
-                            </div>
+                    <div style={{width: '100%', height: '100px', backgroundColor: '#6e56f8'}}>
+                        <div style={{width: '100%', height: '100px', fontSize:'20px',backgroundColor: '#6e56f8',textAlign:'center',color:'white',lineHeight:'100px',}}>
+                            {/*<div className="gpdiv-top">*/}
+                            {/*<p className="gpnum-p">1</p>*/}
+                            {/*<p className="gptitle-p">猜中</p>*/}
+                            {/*</div>*/}
+                            {/*<div className="gpdiv-top">*/}
+                            {/*<p className="gpnum-p">1</p>*/}
+                            {/*<p className="gptitle-p">未猜中</p>*/}
+                            {/*</div>*/}
+                            {/*<div className="gpdiv-top">*/}
+                                {/*<p className="gpnum-p">{localStorage.getItem(glo.Spend)}</p>*/}
+                                {/*<p className="gptitle-p">押注总ETH</p>*/}
+                            {/*</div>*/}
+                            {/*<div className="gpdiv-top">*/}
+                                {/*<p className="gpnum-p">{localStorage.getItem(glo.Win)}</p>*/}
+                                {/*<p className="gptitle-p">赢得总ETH</p>*/}
+                            {/*</div>*/}
+                            {team1} VS {team2}
                         </div>
-                        <div style={{width: '100%', height: '50px', backgroundColor: 'white'}}>
-                            <p className="gppv-p">我的区块链地址</p>
-                            <p className="gpaddress-p">0x2222220020020202202020020</p>
-                        </div>
+                        {/*<div style={{width: '100%', height: '50px', backgroundColor: 'white'}}>*/}
+                            {/*<p className="gppv-p">我的区块链地址</p>*/}
+                            {/*<p className="gpaddress-p">{localStorage.getItem(glo.UserAddress)}</p>*/}
+                        {/*</div>*/}
                     </div>
                 )
             }
+            // "betId": "B18070101205204383",
+            //     "uid": "U18063014233480941",
+            //     "address": "H18063014255592679",
+            //     "handicapId": "H18063014255592679",
+            //     "status": 0,
+            //     "target1Num": 0,
+            //     "target2Num": 0.01,
+            //     "target3Num": 0,
+            //     "createTime": "2018-06-30T17:20:52.000+0000",
+            //     "team1": "德国",
+            //     "team2": "韩国"
+            //"startTime": "2018-06-30T06:25:56.000+0000",
+            // "endtime": "2018-06-30T06:25:56.000+0000"
+            let obj = this.state.dataArr[rowID]
+            let teamstr = ""
+            if(obj.target1Num != 0){
+                teamstr = obj.uid+"已投注"+obj.target1Num +"个ETH压"+obj.team1+"赢"
+            }
+            else if(obj.target2Num != 0){
+                teamstr = obj.uid+"已投注"+ obj.target2Num +"个ETH压"+"平"
+            }
+            else if(obj.target3Num != 0){
+                teamstr = obj.uid+"已投注"+ obj.target3Num +"个ETH压"+obj.team2+"赢"
+            }
+            let str = ""
+            // public static final byte STATUS_FREEZE = 1;
+            // public static final byte STATUS_NORMAL = 0;
+            // public static final byte STATUS_RESULT = 2
+            if(obj.status == 0){
+                str = '竞猜中'
+            }
+            else{
+                str = '已结束'
+            }
+            let arr = obj.startTime.split('.')
+            let tmpTime = ""
+            if(arr.length > 1){
+                tmpTime = arr[0].replace(" ","T")
+            }
+            console.log("tmpTime: "+tmpTime)
+            var d = new Date(tmpTime)
+            let year="",mouth="",day=""
+            let hour="",minutes="",seconds=""
+            year = d.getFullYear()+""
+            if(d.getMonth() < 10){
+                let mo = d.getMonth()+1
+                mouth = "0"+mo
+            }
+            else{
+                mouth = d.getMonth()+1+""
+            }
+            day = d.getDate()+""
+            if(d.getHours() < 10){
+                hour = "0"+d.getHours()
+            }
+            else{
+                hour = ""+d.getHours()
+            }
+            if(d.getMinutes() < 10){
+                minutes = "0"+d.getMinutes()
+            }
+            else{
+                minutes = ""+d.getMinutes()
+            }
+            if(d.getSeconds() < 10){
+                seconds = "0"+d.getSeconds()
+            }
+            else{
+                seconds = ""+d.getSeconds()
+            }
+            let timenum = mouth+"月"+day+"日"
+            console.log(222222+timenum+ "  "+hour+"   "+minutes+"  "+seconds)
+
+            let timenum1 = ""
+            if(obj.endtime != "") {
+                let arr = obj.startTime.split('.')
+                let tmpTime = ""
+                if (arr.length > 1) {
+                    tmpTime = arr[0].replace(" ", "T")
+                }
+                console.log("tmpTime: " + tmpTime)
+                var d = new Date(tmpTime)
+                let year = "", mouth = "", day = ""
+                let hour = "", minutes = "", seconds = ""
+                year = d.getFullYear() + ""
+                if (d.getMonth() < 10) {
+                    let mo = d.getMonth() + 1
+                    mouth = "0" + mo
+                }
+                else {
+                    mouth = d.getMonth() + 1 + ""
+                }
+                day = d.getDate() + ""
+                if (d.getHours() < 10) {
+                    hour = "0" + d.getHours()
+                }
+                else {
+                    hour = "" + d.getHours()
+                }
+                if (d.getMinutes() < 10) {
+                    minutes = "0" + d.getMinutes()
+                }
+                else {
+                    minutes = "" + d.getMinutes()
+                }
+                if (d.getSeconds() < 10) {
+                    seconds = "0" + d.getSeconds()
+                }
+                else {
+                    seconds = "" + d.getSeconds()
+                }
+                timenum1 = mouth + "月" + day + "日"
+                console.log(222222 + timenum + "  " + hour + "   " + minutes + "  " + seconds)
+            }
+
             return (
                 <div onClick={this.detailClick.bind(this)}>
                     <div style={{width: '100%', height: '30px', backgroundColor: '#EFF0F4'}}>
-                        <p style={{marginLeft:'15px',color:'#999',fontSize:'11px',position:'absolute',marginTop:'10px'}}>6月26日 赛事</p>
+                        <p style={{marginLeft:'15px',color:'#999',fontSize:'11px',position:'absolute',marginTop:'10px'}}>{timenum} 赛事</p>
                     </div>
                     <div style={{width: '100%', height: '100px', backgroundColor: '#EFF0F4'}}>
                         <div className="gdiv-item">
-                            <p className="gp-name">尼日利亚 vs 冰岛</p>
-                            <p className="gp-number">我已投注1个ETH压冰岛赢</p>
-                            <p className="gp-time">6月27日 22:00截止</p>
-                            <p className="gp-state">竞猜中</p>
+                            <p className="gp-name">{obj.team1} vs {obj.team2}</p>
+                            <p className="gp-number">{teamstr}</p>
+                            <p className="gp-time">{timenum1}截止</p>
+                            <p className="gp-state">{str}</p>
                         </div>
                     </div>
                 </div>
@@ -159,9 +300,8 @@ class PanKouListCmt extends Component {
             </div>
         )
     }
-
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/api/v1/fbg/game/bets?uid='+localStorage.getItem(glo.Uid)+'&hid='+this.props.location.query.uid
+        let url = glo.urlhttp + '/game/api/v1/fbg/game/bets?hid='+hid
         console.log("111:" + url)
         let tmpthis = this;
         let config = {
@@ -177,19 +317,19 @@ class PanKouListCmt extends Component {
                 let data = {
                     da:1,
                 };
-                let dataarr = response.data.content
+                let dataarr = response.data.data.content
                 console.log('22222' + JSON.stringify(dataarr))
                 dataarr.splice(0, 0, data)
-
-                tmpthis.setState({
-                    dataArr:dataarr,
-                    dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
-                    height: 10,
-                    refreshing: false,
-                    isLoading: false,
-                })
-                console.log("33333 : " + JSON.stringify(response.data.data.content));
-                // }
+                if(response.data.code == 200){
+                    tmpthis.setState({
+                        dataArr:dataarr,
+                        dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                        height: 10,
+                        refreshing: false,
+                        isLoading: false,
+                    })
+                    console.log("33333 : " + JSON.stringify(response.data.data.content));
+                }
             })
             .catch(function (error) {
 

@@ -67,11 +67,19 @@ class LoginCmt extends Component {
                     localStorage.setItem(glo.UserAddress,response.data.data.tbAccount.address)
                     localStorage.setItem(glo.Uid,response.data.data.userRelationship.uid)
                     localStorage.setItem(glo.Balance,response.data.data.tbAccount.balance)
+                    localStorage.setItem(glo.Spend,response.data.data.tbAccount.spend)
+                    localStorage.setItem(glo.Win,response.data.data.tbAccount.win)
                     tmpthis.props.history.goBack()
                 }
                 else{
                     console.log("111"+response.data.code);
                     glo.showToast('登录失败')
+                    localStorage.removeItem(glo.UserName)
+                    localStorage.removeItem(glo.UserAddress)
+                    localStorage.removeItem(glo.Uid)
+                    localStorage.removeItem(glo.Balance)
+                    localStorage.removeItem(glo.Spend)
+                    localStorage.removeItem(glo.Win)
                 }
             })
             .catch(function (error) {

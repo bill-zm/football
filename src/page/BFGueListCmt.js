@@ -44,6 +44,10 @@ class BFGueListCmt extends Component {
         this.setState({
             [key]: false,
         });
+        if(parseFloat(this.state.val) > parseFloat(localStorage.getItem(glo.Balance))){
+            glo.showToast('超出账户ETH数量')
+            return
+        }
         let url = glo.urlhttp + '/game/api/v1/fbg/game/bet'  ///user/api/v1/register
         let data
         let obj = this.state.dataArr[selectNum]
@@ -74,6 +78,7 @@ class BFGueListCmt extends Component {
         }
         console.log('1111'+JSON.stringify(data) + obj.handicapId);
         let tmpthis = this;
+        console.log('222'+url);
         axios.post(url,data)
             .then(function (response) {
                 // taskData = response
@@ -81,7 +86,7 @@ class BFGueListCmt extends Component {
                     animating:false,
                 })
                 console.log(JSON.stringify(response));
-                if(response.data.data.code == 200){
+                if(response.data.code == 200){
                     glo.showToast('投注成功')
                     tmpthis.getTaskList()
                 }
@@ -152,7 +157,9 @@ class BFGueListCmt extends Component {
             if(rowID == 0){
                 return(
                     <div style={{width: '100%',height: '200px',backgroundColor:'green'}}>
-                        <p className="p-titletop">ETH竞猜世界杯</p>
+                        <div className="bf-topdiv" style={{width: '100%',height: '200px'}}>
+                        </div>
+                        {/*<p className="p-titletop">ETH竞猜世界杯</p>*/}
                         <button className="btn-detail" onClick={this.detailClick.bind(this)}>详细规则</button>
                     </div>
                 )
@@ -226,8 +233,8 @@ class BFGueListCmt extends Component {
                                 <p className="per-pcarve">瓜分{obj.target3}ETH</p>
                             </div>
                             <Link to={{
-                                    pathname: '/handicap',
-                                    query: {hid: obj.handicapId},
+                                    pathname: '/pankoulist',
+                                    query: {obj: obj},
                             }}>
                                 <div onClick={this.moreAddreeClick.bind(this)}>
                                     <p className="p-address">本场比赛区块链地址0x{obj.handicapId}</p>

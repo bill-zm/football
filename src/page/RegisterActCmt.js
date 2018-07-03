@@ -128,7 +128,7 @@ class RegisterActCmt extends Component {
                  </div>
                  <div className="div1">
                      <div className="div3-img1">
-                         <input ref="address" className="input-text" placeholder="以太坊地址"/>
+                         <input ref="address" className="input-text" placeholder="ETH地址"/>
                      </div>
                  </div>
                  <footer>
