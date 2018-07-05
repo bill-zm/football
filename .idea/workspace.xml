@@ -2,28 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55ff35e7-ad82-445c-a1a1-38db629395d2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/football_eth.jpeg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/manifest.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.84aac76a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.84aac76a.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.16df993d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.16df993d.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/media/logo.5d5d9eef.svg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/belgium.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/brazil.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/colombia.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/croatia.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/england.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/france.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/russia.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/sweden.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/img/wulagui.ico" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/asset-manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/callback.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/manifest.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/service-worker.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/static/css/main.9499b185.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/static/css/main.9499b185.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/static/js/main.9a8f73ce.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/static/js/main.9a8f73ce.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/static/media/football_eth.56e79aee.jpeg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/football_eth.jpeg" afterPath="$PROJECT_DIR$/src/img/football_eth.jpeg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-scripts/config/paths.js" afterPath="$PROJECT_DIR$/node_modules/react-scripts/config/paths.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/BFGueListCmt.js" afterPath="$PROJECT_DIR$/src/page/BFGueListCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/GuessRecordCmt.js" afterPath="$PROJECT_DIR$/src/page/GuessRecordCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/LoginCmt.js" afterPath="$PROJECT_DIR$/src/page/LoginCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/PanKouListCmt.js" afterPath="$PROJECT_DIR$/src/page/PanKouListCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/PersonCenterCmt.js" afterPath="$PROJECT_DIR$/src/page/PersonCenterCmt.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/RegisterActCmt.js" afterPath="$PROJECT_DIR$/src/page/RegisterActCmt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/css/checkclerk.css" afterPath="$PROJECT_DIR$/src/page/css/checkclerk.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/css/fastcoinlist.css" afterPath="$PROJECT_DIR$/src/page/css/fastcoinlist.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/page/css/guessrecordt.css" afterPath="$PROJECT_DIR$/src/page/css/guessrecordt.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/globle.js" afterPath="$PROJECT_DIR$/src/utils/globle.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,23 +48,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RegisterActCmt.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/RegisterActCmt.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="123" column="39" lean-forward="false" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
-              <folding>
-                <element signature="e#46#85#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="globle.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="globle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/globle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state relative-caret-position="240">
+              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#45#84#0" expanded="true" />
@@ -64,48 +61,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logincmt.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/css/logincmt.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PersonCenterCmt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/PersonCenterCmt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="34" />
+            <state relative-caret-position="300">
+              <caret line="164" column="28" lean-forward="false" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <element signature="e#46#85#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BFGueListCmt.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginCmt.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/LoginCmt.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="75" column="82" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="75" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BFGueListCmt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/BFGueListCmt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="337" column="22" lean-forward="true" selection-start-line="337" selection-start-column="22" selection-end-line="337" selection-end-column="22" />
+            <state relative-caret-position="447">
+              <caret line="405" column="27" lean-forward="false" selection-start-line="405" selection-start-column="27" selection-end-line="405" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#46#85#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paths.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/config/paths.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -113,21 +99,20 @@
       <file leaf-file-name="checkclerk.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/css/checkclerk.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="70" column="23" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+            <state relative-caret-position="15">
+              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuessRecordCmt.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/GuessRecordCmt.js">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="271" column="26" lean-forward="false" selection-start-line="271" selection-start-column="26" selection-end-line="271" selection-end-column="26" />
+            <state relative-caret-position="349">
+              <caret line="78" column="38" lean-forward="false" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#46#85#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,8 +121,18 @@
       <file leaf-file-name="fastcoinlist.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/css/fastcoinlist.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2175">
-              <caret line="145" column="24" lean-forward="false" selection-start-line="145" selection-start-column="24" selection-end-line="145" selection-end-column="24" />
+            <state relative-caret-position="276">
+              <caret line="201" column="15" lean-forward="false" selection-start-line="201" selection-start-column="15" selection-end-line="201" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="guessrecordt.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/css/guessrecordt.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -146,8 +141,18 @@
       <file leaf-file-name="PanKouListCmt.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/PanKouListCmt.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="251" column="45" lean-forward="false" selection-start-line="251" selection-start-column="45" selection-end-line="251" selection-end-column="45" />
+            <state relative-caret-position="241">
+              <caret line="304" column="111" lean-forward="false" selection-start-line="304" selection-start-column="70" selection-end-line="304" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuessRecordCmt.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/GuessRecordCmt.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3972">
+              <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#46#85#0" expanded="true" />
@@ -167,36 +172,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>div3</find>
-      <find>p-register</find>
-      <find>p-address</find>
-      <find>back</find>
-      <find>per-cbcon</find>
-      <find>div-percent</find>
-      <find>买入</find>
-      <find>selectNum</find>
-      <find>betClick</find>
-      <find>Link</find>
-      <find>glo</find>
-      <find>onClose1</find>
-      <find>uername</find>
-      <find>getUserData</find>
-      <find>PersonCenterCmt</find>
-      <find>gpdiv-top</find>
-      <find>onClose</find>
-      <find>PanKouListCmt</find>
-      <find>link</find>
-      <find>myName</find>
-      <find>loginphone</find>
-      <find>glo.Uid</find>
-      <find>qucodeurl</find>
-      <find>teamstr</find>
+      <find>api/v1/fbg/game/betstatus</find>
+      <find>v1/fbg/game/betstatus</find>
+      <find>fbg/game/betstatus</find>
+      <find>betstatus</find>
       <find>tmpTime</find>
-      <find>withDrawHttp</find>
-      <find>p-ethnum</find>
-      <find>以太坊</find>
-      <find>btn-detail</find>
+      <find>this.props.history.push</find>
+      <find>this.props.history</find>
       <find>handicapId</find>
+      <find>axios</find>
+      <find>token</find>
+      <find>glo.urlhttp</find>
+      <find>back</find>
+      <find>logincmt</find>
+      <find>modal1</find>
+      <find>/v1/fbg/handicap/handicaps</find>
+      <find>glo</find>
+      <find>glo.Token</find>
+      <find>glo.Tokenu</find>
+      <find>glo.Tokenur</find>
+      <find>glo.Tokenurl</find>
+      <find>animating</find>
+      <find>withdrawwithdraw</find>
+      <find>注册</find>
+      <find>1038</find>
+      <find>p-country</find>
+      <find>60</find>
+      <find>p-country3</find>
+      <find>componentDidMount</find>
+      <find>p-country1</find>
+      <find>哥伦比亚</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,19 +212,19 @@
       <list>
         <option value="$PROJECT_DIR$/src/page/css/registeractcmt.css" />
         <option value="$PROJECT_DIR$/src/page/css/logincmt.css" />
-        <option value="$PROJECT_DIR$/src/page/css/checkclerk.css" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/page/LoginCmt.js" />
-        <option value="$PROJECT_DIR$/src/page/GuessRecordCmt.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/page/PanKouListCmt.js" />
         <option value="$PROJECT_DIR$/src/page/css/guessrecordt.css" />
-        <option value="$PROJECT_DIR$/src/page/PersonCenterCmt.js" />
         <option value="$PROJECT_DIR$/src/page/RegisterActCmt.js" />
-        <option value="$PROJECT_DIR$/src/page/BFGueListCmt.js" />
-        <option value="$PROJECT_DIR$/src/page/css/fastcoinlist.css" />
-        <option value="$PROJECT_DIR$/src/utils/globle.js" />
         <option value="$PROJECT_DIR$/node_modules/react-scripts/config/paths.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/page/css/checkclerk.css" />
+        <option value="$PROJECT_DIR$/src/page/GuessRecordCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/PanKouListCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/LoginCmt.js" />
+        <option value="$PROJECT_DIR$/src/page/PersonCenterCmt.js" />
+        <option value="$PROJECT_DIR$/src/utils/globle.js" />
+        <option value="$PROJECT_DIR$/src/page/css/fastcoinlist.css" />
+        <option value="$PROJECT_DIR$/src/page/BFGueListCmt.js" />
       </list>
     </option>
   </component>
@@ -364,60 +369,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="football" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="football" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="football" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="football" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="react-scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="football" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="football" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="react-scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -460,7 +411,64 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
   </component>
@@ -478,12 +486,12 @@
       <workItem from="1530236857701" duration="39726000" />
       <workItem from="1530374140649" duration="10467000" />
       <workItem from="1530449081060" duration="711000" />
-      <workItem from="1530493815828" duration="23296000" />
+      <workItem from="1530493815828" duration="54678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75757000" />
+    <option name="totallyTimeSpent" value="107139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
@@ -526,7 +534,7 @@
         <state relative-caret-position="900">
           <caret line="66" column="5" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="66" selection-end-column="5" />
           <folding>
-            <element signature="e#46#85#0" expanded="true" />
+            <element signature="e#46#85#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,7 +555,7 @@
         <state relative-caret-position="105">
           <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <element signature="e#46#85#0" expanded="true" />
           </folding>
         </state>
@@ -596,8 +604,8 @@
         <state relative-caret-position="90">
           <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#46#85#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#46#85#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -628,7 +636,7 @@
         <state relative-caret-position="2070">
           <caret line="144" column="52" lean-forward="true" selection-start-line="144" selection-start-column="52" selection-end-line="144" selection-end-column="52" />
           <folding>
-            <element signature="e#46#85#0" expanded="true" />
+            <element signature="e#46#85#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,7 +682,7 @@
         <state relative-caret-position="285">
           <caret line="28" column="27" lean-forward="true" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <element signature="e#46#85#0" expanded="true" />
           </folding>
         </state>
@@ -722,7 +730,7 @@
         <state relative-caret-position="1110">
           <caret line="80" column="10" lean-forward="true" selection-start-line="80" selection-start-column="10" selection-end-line="80" selection-end-column="10" />
           <folding>
-            <element signature="e#46#85#0" expanded="true" />
+            <element signature="e#46#85#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -732,7 +740,7 @@
         <state relative-caret-position="210">
           <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <element signature="e#46#85#0" expanded="true" />
           </folding>
         </state>
@@ -772,105 +780,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/LoginCmt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#92#131#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/qrcode-react/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/css/guessrecordt.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PanKouListCmt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="251" column="45" lean-forward="false" selection-start-line="251" selection-start-column="45" selection-end-line="251" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#46#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/GuessRecordCmt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="271" column="26" lean-forward="false" selection-start-line="271" selection-start-column="26" selection-end-line="271" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#46#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/PersonCenterCmt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="70" column="34" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#46#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/img/football_eth.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/RegisterActCmt.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="123" column="39" lean-forward="false" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
-          <folding>
-            <element signature="e#46#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/css/fastcoinlist.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="145" column="24" lean-forward="false" selection-start-line="145" selection-start-column="24" selection-end-line="145" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -891,32 +804,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/globle.js">
+    <entry file="file://$PROJECT_DIR$/src/App.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/img/integral.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/img/football_eth.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/css/main.9499b185.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="0" column="1657" lean-forward="false" selection-start-line="0" selection-start-column="1657" selection-end-line="0" selection-end-column="1657" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="37" column="34" lean-forward="false" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/RegisterActCmt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <element signature="e#46#85#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/PanKouListCmt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="304" column="111" lean-forward="false" selection-start-line="304" selection-start-column="70" selection-end-line="304" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="78" column="38" lean-forward="false" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/PersonCenterCmt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="164" column="28" lean-forward="false" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="28" />
+          <folding>
+            <element signature="e#46#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/img/wulagui.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/GuessRecordCmt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3972">
+          <caret line="46" column="5" lean-forward="false" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#45#84#0" expanded="true" />
+            <element signature="e#46#85#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/css/checkclerk.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="70" column="23" lean-forward="false" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+        <state relative-caret-position="15">
+          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/css/guessrecordt.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/css/fastcoinlist.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="201" column="15" lean-forward="false" selection-start-line="201" selection-start-column="15" selection-end-line="201" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/img/belgium.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/BFGueListCmt.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="337" column="22" lean-forward="true" selection-start-line="337" selection-start-column="22" selection-end-line="337" selection-end-column="22" />
+        <state relative-caret-position="447">
+          <caret line="405" column="27" lean-forward="false" selection-start-line="405" selection-start-column="27" selection-end-line="405" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#46#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/LoginCmt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="75" column="82" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="75" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/globle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#45#84#0" expanded="true" />
           </folding>
         </state>
       </provider>

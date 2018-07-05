@@ -10,6 +10,7 @@ import axios from 'axios';
 import {queryper}from '../utils/QueryPer'
 import * as glo from '../utils/globle'
 import './css/guessrecordt.css'
+import {Link,withRouter} from 'react-router-dom'
 import { PullToRefresh, ListView, TabBar,Modal, List, Stepper,Button} from 'antd-mobile';
 const NUM_ROWS = 20;
 
@@ -30,7 +31,9 @@ class GuessRecordCmt extends Component {
             modal1:false,
             val:0.01,
         };
-        this.getTaskList()
+        // if(!localStorage.getItem(glo.Uid)){
+        //     this.props.history.push("/logincmt");
+        // }
     }
     onClose = key => () => {
         this.setState({
@@ -50,6 +53,7 @@ class GuessRecordCmt extends Component {
         }
     }
     componentDidMount() {
+        this.getTaskList()
     }
     onRefresh = () => {
         // this.getTaskList()
@@ -64,9 +68,9 @@ class GuessRecordCmt extends Component {
         })
     }
     detailClick(){
-        this.setState({
-            modal1:true,
-        })
+        // this.setState({
+        //     modal1:true,
+        // })
     }
     render() {
         const row = (rowData, sectionID, rowID) => {
@@ -98,136 +102,142 @@ class GuessRecordCmt extends Component {
                         </div>
                     )
                 }
-            // "betId": "B18070101205204383",
-            //     "uid": "U18063014233480941",
-            //     "address": "H18063014255592679",
-            //     "handicapId": "H18063014255592679",
-            //     "status": 0,
-            //     "target1Num": 0,
-            //     "target2Num": 0.01,
-            //     "target3Num": 0,
-            //     "createTime": "2018-06-30T17:20:52.000+0000",
-            //     "team1": "德国",
-            //     "team2": "韩国"
-            //"startTime": "2018-06-30T06:25:56.000+0000",
-                // "endtime": "2018-06-30T06:25:56.000+0000"
-            let obj = this.state.dataArr[rowID]
-            let teamstr = ""
-            if(obj.target1Num != 0){
-                teamstr = "我已投注"+ obj.target1Num +"个ETH压"+obj.team1+"赢"
-            }
-            else if(obj.target2Num != 0){
-                teamstr = "我已投注"+ obj.target2Num +"个ETH压"+"平"
-            }
-            else if(obj.target3Num != 0){
-                teamstr = "我已投注"+ obj.target3Num +"个ETH压"+obj.team2+"赢"
-            }
-            let str = ""
-            // public static final byte STATUS_FREEZE = 1;
-            // public static final byte STATUS_NORMAL = 0;
-            // public static final byte STATUS_RESULT = 2
-            if(obj.status == 0){
-                str = '竞猜中'
-            }
-            else{
-                str = '已结束'
-            }
-            let arr = obj.startTime.split('.')
-            let tmpTime = ""
-            if(arr.length > 1){
-                tmpTime = arr[0].replace(" ","T")
-            }
-            console.log("tmpTime: "+tmpTime)
-            var d = new Date(tmpTime)
-            let year="",mouth="",day=""
-            let hour="",minutes="",seconds=""
-            year = d.getFullYear()+""
-            if(d.getMonth() < 10){
-                let mo = d.getMonth()+1
-                mouth = "0"+mo
-            }
-            else{
-                mouth = d.getMonth()+1+""
-            }
-            day = d.getDate()+""
-            if(d.getHours() < 10){
-                hour = "0"+d.getHours()
-            }
-            else{
-                hour = ""+d.getHours()
-            }
-            if(d.getMinutes() < 10){
-                minutes = "0"+d.getMinutes()
-            }
-            else{
-                minutes = ""+d.getMinutes()
-            }
-            if(d.getSeconds() < 10){
-                seconds = "0"+d.getSeconds()
-            }
-            else{
-                seconds = ""+d.getSeconds()
-            }
-            let timenum = mouth+"月"+day+"日"
-            console.log(222222+timenum+ "  "+hour+"   "+minutes+"  "+seconds)
+                    // "betId": "B18070101205204383",
+                    //     "uid": "U18063014233480941",
+                    //     "address": "H18063014255592679",
+                    //     "handicapId": "H18063014255592679",
+                    //     "status": 0,
+                    //     "target1Num": 0,
+                    //     "target2Num": 0.01,
+                    //     "target3Num": 0,
+                    //     "createTime": "2018-06-30T17:20:52.000+0000",
+                    //     "team1": "德国",
+                    //     "team2": "韩国"
+                    //"startTime": "2018-06-30T06:25:56.000+0000",
+                    // "endtime": "2018-06-30T06:25:56.000+0000"
+                    let obj = this.state.dataArr[rowID]
+                    let teamstr = ""
+                    if (obj.target1Num != 0) {
+                        teamstr = "我已投注" + obj.target1Num + "个ETH压" + obj.team1 + "赢"
+                    }
+                    else if (obj.target2Num != 0) {
+                        teamstr = "我已投注" + obj.target2Num + "个ETH压" + "平"
+                    }
+                    else if (obj.target3Num != 0) {
+                        teamstr = "我已投注" + obj.target3Num + "个ETH压" + obj.team2 + "赢"
+                    }
+                    let str = ""
+                    // public static final byte STATUS_FREEZE = 1;
+                    // public static final byte STATUS_NORMAL = 0;
+                    // public static final byte STATUS_RESULT = 2
+                    if (obj.status == 0) {
+                        str = '竞猜中'
+                    }
+                    else {
+                        str = '已结束'
+                    }
+                    let arr = obj.startTime.split('.')
+                    let tmpTime = ""
+                    if (arr.length > 1) {
+                        tmpTime = arr[0].replace(" ", "T")
+                    }
+                    console.log("tmpTime: " + tmpTime)
+                    var d = new Date(tmpTime)
+                    let year = "", mouth = "", day = ""
+                    let hour = "", minutes = "", seconds = ""
+                    year = d.getFullYear() + ""
+                    if (d.getMonth() < 10) {
+                        let mo = d.getMonth() + 1
+                        mouth = "0" + mo
+                    }
+                    else {
+                        mouth = d.getMonth() + 1 + ""
+                    }
+                    day = d.getDate() + ""
+                    if (d.getHours() < 10) {
+                        hour = "0" + d.getHours()
+                    }
+                    else {
+                        hour = "" + d.getHours()
+                    }
+                    if (d.getMinutes() < 10) {
+                        minutes = "0" + d.getMinutes()
+                    }
+                    else {
+                        minutes = "" + d.getMinutes()
+                    }
+                    if (d.getSeconds() < 10) {
+                        seconds = "0" + d.getSeconds()
+                    }
+                    else {
+                        seconds = "" + d.getSeconds()
+                    }
+                    let timenum = mouth + "月" + day + "日"
+                    console.log(222222 + timenum + "  " + hour + "   " + minutes + "  " + seconds)
 
-            let timenum1 = ""
-            if(obj.endtime != "") {
-                let arr = obj.startTime.split('.')
-                let tmpTime = ""
-                if (arr.length > 1) {
-                    tmpTime = arr[0].replace(" ", "T")
-                }
-                console.log("tmpTime: " + tmpTime)
-                var d = new Date(tmpTime)
-                let year = "", mouth = "", day = ""
-                let hour = "", minutes = "", seconds = ""
-                year = d.getFullYear() + ""
-                if (d.getMonth() < 10) {
-                    let mo = d.getMonth() + 1
-                    mouth = "0" + mo
-                }
-                else {
-                    mouth = d.getMonth() + 1 + ""
-                }
-                day = d.getDate() + ""
-                if (d.getHours() < 10) {
-                    hour = "0" + d.getHours()
-                }
-                else {
-                    hour = "" + d.getHours()
-                }
-                if (d.getMinutes() < 10) {
-                    minutes = "0" + d.getMinutes()
-                }
-                else {
-                    minutes = "" + d.getMinutes()
-                }
-                if (d.getSeconds() < 10) {
-                    seconds = "0" + d.getSeconds()
-                }
-                else {
-                    seconds = "" + d.getSeconds()
-                }
-                timenum1 = mouth + "月" + day + "日"
-                console.log(222222 + timenum + "  " + hour + "   " + minutes + "  " + seconds)
-            }
+                    let timenum1 = ""
+                    if (obj.endtime != "") {
+                        let arr = obj.startTime.split('.')
+                        let tmpTime = ""
+                        if (arr.length > 1) {
+                            tmpTime = arr[0].replace(" ", "T")
+                        }
+                        console.log("tmpTime: " + tmpTime)
+                        var d = new Date(tmpTime)
+                        let year = "", mouth = "", day = ""
+                        let hour = "", minutes = "", seconds = ""
+                        year = d.getFullYear() + ""
+                        if (d.getMonth() < 10) {
+                            let mo = d.getMonth() + 1
+                            mouth = "0" + mo
+                        }
+                        else {
+                            mouth = d.getMonth() + 1 + ""
+                        }
+                        day = d.getDate() + ""
+                        if (d.getHours() < 10) {
+                            hour = "0" + d.getHours()
+                        }
+                        else {
+                            hour = "" + d.getHours()
+                        }
+                        if (d.getMinutes() < 10) {
+                            minutes = "0" + d.getMinutes()
+                        }
+                        else {
+                            minutes = "" + d.getMinutes()
+                        }
+                        if (d.getSeconds() < 10) {
+                            seconds = "0" + d.getSeconds()
+                        }
+                        else {
+                            seconds = "" + d.getSeconds()
+                        }
+                        timenum1 = mouth + "月" + day + "日"
+                        console.log(222222 + timenum + "  " + hour + "   " + minutes + "  " + seconds)
+                    }
 
-            return (
-                    <div onClick={this.detailClick.bind(this)}>
-                        <div style={{width: '100%', height: '30px', backgroundColor: '#EFF0F4'}}>
-                            <p style={{marginLeft:'15px',color:'#999',fontSize:'11px',position:'absolute',marginTop:'10px'}}>{timenum} 赛事</p>
+                    return (
+                        <div onClick={this.detailClick.bind(this)}>
+                            <div style={{width: '100%', height: '30px', backgroundColor: '#EFF0F4'}}>
+                                <p style={{
+                                    marginLeft: '15px',
+                                    color: '#999',
+                                    fontSize: '11px',
+                                    position: 'absolute',
+                                    marginTop: '10px'
+                                }}>{timenum} 赛事</p>
+                            </div>
+                            <div style={{width: '100%', height: '100px', backgroundColor: '#EFF0F4'}}>
+                                <div className="gdiv-item">
+                                    <p className="gp-name">{obj.team1} vs {obj.team2}</p>
+                                    <p className="gp-number">{teamstr}</p>
+                                    <p className="gp-time">{timenum1}截止</p>
+                                    <p className="gp-state">{str}</p>
+                                </div>
+                            </div>
                         </div>
-                    <div style={{width: '100%', height: '100px', backgroundColor: '#EFF0F4'}}>
-                        <div className="gdiv-item">
-                            <p className="gp-name">{obj.team1} vs {obj.team2}</p>
-                            <p className="gp-number">{teamstr}</p>
-                            <p className="gp-time">{timenum1}截止</p>
-                            <p className="gp-state">{str}</p>
-                        </div>
-                    </div>
-                    </div>
-                );
+                    );
         };
         return (
             <div style={{width:'100%',height:'100%'}}>
@@ -275,7 +285,7 @@ class GuessRecordCmt extends Component {
         )
     }
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/game/api/v1/fbg/game/bets?uid='+localStorage.getItem(glo.Uid)
+        let url = glo.urlhttp + '/game/api/v1/fbg/game/bets?uid='+localStorage.getItem(glo.Uid)+'&token='+localStorage.getItem(glo.Token)
         console.log("111:" + url)
         let tmpthis = this;
         let config = {
@@ -304,11 +314,34 @@ class GuessRecordCmt extends Component {
                     })
                     console.log("33333 : " + JSON.stringify(response.data.data.content));
                 }
+                else{
+                    let data = [{
+                        da:1,
+                    }];
+                    let dataarr = data
+                        tmpthis.setState({
+                            dataArr:dataarr,
+                            dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                            height: 10,
+                            refreshing: false,
+                            isLoading: false,
+                        })
+                }
             })
             .catch(function (error) {
-
+                let data = [{
+                    da:1,
+                }];
+                let dataarr = data
+                tmpthis.setState({
+                    dataArr:dataarr,
+                    dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                    height: 10,
+                    refreshing: false,
+                    isLoading: false,
+                })
             });
     }
 }
 
-export default GuessRecordCmt;
+export default withRouter(GuessRecordCmt);

@@ -55,7 +55,6 @@ class PanKouListCmt extends Component {
             team2 = JSON.parse(localStorage.getItem(glo.Obj)).team2
             console.log("111111:" + hid+team1+team2)
         }
-        this.getTaskList()
     }
     onClose = key => () => {
         this.setState({
@@ -75,6 +74,7 @@ class PanKouListCmt extends Component {
         }
     }
     componentDidMount() {
+        this.getTaskList()
     }
     onRefresh = () => {
         // this.getTaskList()
@@ -89,9 +89,9 @@ class PanKouListCmt extends Component {
         })
     }
     detailClick(){
-        this.setState({
-            modal1:true,
-        })
+        // this.setState({
+        //     modal1:true,
+        // })
     }
     render() {
         const row = (rowData, sectionID, rowID) => {
@@ -301,8 +301,9 @@ class PanKouListCmt extends Component {
         )
     }
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/game/api/v1/fbg/game/bets?hid='+hid
-        console.log("111:" + url)
+
+        let url = glo.urlhttp + '/game/api/v1/fbg/game/bets?hid='+hid+'&token='+localStorage.getItem(glo.Token)
+        console.log("111:" + url +localStorage.getItem(glo.Token))
         let tmpthis = this;
         let config = {
             // headers: {'Content-Type': 'application/json'},
@@ -330,9 +331,32 @@ class PanKouListCmt extends Component {
                     })
                     console.log("33333 : " + JSON.stringify(response.data.data.content));
                 }
+                else{
+                    let data = [{
+                        da:1,
+                    }];
+                    let dataarr = data
+                        tmpthis.setState({
+                            dataArr:dataarr,
+                            dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                            height: 10,
+                            refreshing: false,
+                            isLoading: false,
+                        })
+                }
             })
             .catch(function (error) {
-
+                let data = [{
+                    da:1,
+                }];
+                let dataarr = data
+                tmpthis.setState({
+                    dataArr:dataarr,
+                    dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                    height: 10,
+                    refreshing: false,
+                    isLoading: false,
+                })
             });
     }
 }

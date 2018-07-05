@@ -22,14 +22,10 @@
     background-color:#f0f0f0;
     height: 80px;
 }
-.p-country{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
-}
+
 .p-number{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 8px;
     font-size: 12px;
     color: #aaaaaa;
 }
@@ -141,25 +137,85 @@
 }
 .btn-detail{
     width: 25%;
-    background-color: #6b56f7;
-    margin-left: 37%;
-    border-style: solid;
-    border-radius: 15px;
-    height: 30px;
+    background-color: transparent;
+    left: 37%;
+    height: 40px;
     font-size: 13px;
-    border-width: 0px;
-    margin-top: 165px;
-    color: white;
+    top: 200px;
+    color: transparent;
     position: absolute;
-    opacity: 0.8;
+    border-width: 0px;
+    border-color: transparent;
 }
 .bf-topdiv{
     /*background-image: url('../../img/football_eth.jpeg');*/
-    background:url('../../img/football_eth.jpeg')no-repeat;
-    width:100%;
+    /*background:url('../../img/football_eth.jpeg')no-repeat;*/
+    max-width:100%;
     height:100%;
-    background-size:100% 100%;
+    margin:0 auto;
+    /*background-size:100% 100%;*/
+    /*position:absolute;*/
+}
+.con-div{
+    height:50px;
+    background-color: transparent;
+}
+.p-country{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.p-country3{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 50px;
+}
+.con-div1{
+    float: left;
+    height: 100%;
+    width: 44%;
+    background-color: transparent;
+}
+.con-detail{
+    position: absolute;
+    height: 100%;
+    width: 44%;
+    background-color: transparent;
+}
+.con-div2{
+    float: left;
+    height: 100%;
+    width: 12%;
+    background-color: transparent;
+}
+.p-country1{
+    position:relative;
+    text-align: right;
+    margin-top: 15px;
+    right: 45px;
+}
+.p-country2{
+    position:relative;
+    text-align: left;
+    margin-top: 15px;
+    left: 45px;
+}
+.rightimg{
+    width:30px;
+    height:30px;
+    /*float: right;*/
     position:absolute;
+    top: 10px;
+    margin-left: 10px;
+}
+.leftimg{
+    width:30px;
+    height:30px;
+    /*float: right;*/
+    position:absolute;
+    top: 10px;
+    right: 10px;
 }
 .am-tab-bar::-webkit-scrollbar {
     display: none;

@@ -10,7 +10,17 @@ import axios from 'axios';
 import {queryper}from '../utils/QueryPer'
 import * as glo from '../utils/globle'
 import './css/fastcoinlist.css'
-import {Link} from 'react-router-dom'
+import ethimg from '../img/football_eth.jpeg'
+import {Link,withRouter} from 'react-router-dom'
+import wulaigui from '../img/wulagui.ico'
+import england from '../img/england.ico'
+import france from '../img/france.ico'
+import brazil from '../img/brazil.ico'
+import belgium from '../img/belgium.png'
+import sweden from '../img/sweden.png'
+import russia from '../img/russia.png'
+import croatia from '../img/croatia.png'
+import colombia from '../img/colombia.png'
 import { PullToRefresh, ListView, TabBar,Modal, List, Stepper,Button} from 'antd-mobile';
 const NUM_ROWS = 20;
 let type = 0;
@@ -33,6 +43,9 @@ class BFGueListCmt extends Component {
             modal1:false,
             val:0.01,
         };
+    }
+
+    componentDidMount() {
         this.getTaskList()
     }
     onClose = key => () => {
@@ -44,11 +57,22 @@ class BFGueListCmt extends Component {
         this.setState({
             [key]: false,
         });
+        if(!localStorage.getItem(glo.Uid)){
+            // const location = {
+            //     pathname: '/logincmt',
+            //     // state: {fromDashboard: true},
+            //     // props: {datacard: this.state.listDataArr[index-1]}
+            // }
+            // this.props.history.push(location)
+            this.props.history.push("/logincmt");
+            // glo.showToast('请先登录')
+            return
+        }
         if(parseFloat(this.state.val) > parseFloat(localStorage.getItem(glo.Balance))){
             glo.showToast('超出账户ETH数量')
             return
         }
-        let url = glo.urlhttp + '/game/api/v1/fbg/game/bet'  ///user/api/v1/register
+        let url = glo.urlhttp + '/game/api/v1/fbg/game/bet?'+'token='+localStorage.getItem(glo.Token)//+glo.TokenUrl  ///user/api/v1/register
         let data
         let obj = this.state.dataArr[selectNum]
         console.log(obj)
@@ -117,8 +141,6 @@ class BFGueListCmt extends Component {
             document.body.style.overflow = 'hidden';
         }
     }
-    componentDidMount() {
-    }
     onRefresh = () => {
         // this.getTaskList()
         this.setState({
@@ -156,19 +178,33 @@ class BFGueListCmt extends Component {
             let obj = this.state.dataArr[rowID]
             if(rowID == 0){
                 return(
-                    <div style={{width: '100%',height: '200px',backgroundColor:'green'}}>
-                        <div className="bf-topdiv" style={{width: '100%',height: '200px'}}>
-                        </div>
+                    <div style={{width: '100%',height: '250px',backgroundColor:'white',position:'relative',textAlign:'center'}}>
+                        {/*<div className="bf-topdiv" style={{width: '100%',height: '200px'}}>*/}
+
+                        {/*</div>*/}
+                        <img className="bf-topdiv" src={ethimg} />
                         {/*<p className="p-titletop">ETH竞猜世界杯</p>*/}
-                        <button className="btn-detail" onClick={this.detailClick.bind(this)}>详细规则</button>
+                        <button className="btn-detail" onClick={this.detailClick.bind(this)}></button>
                     </div>
                 )
             }
             else {
-                let p1 = (obj.target1/(obj.target1+obj.target2+obj.target3)).toFixed(2)
-                let p2 = obj.target2/(obj.target1+obj.target2+obj.target3).toFixed(2)
-                let p3 = obj.target3/(obj.target1+obj.target2+obj.target3).toFixed(2)
 
+                let p1 = (obj.target1/(obj.target1+obj.target2+obj.target3)).toFixed(2)
+                let p2 = (obj.target2/(obj.target1+obj.target2+obj.target3)).toFixed(2)
+                let p3 = (obj.target3/(obj.target1+obj.target2+obj.target3)).toFixed(2)
+                if(obj.target1 == 0){
+                    p1 = 0
+                }
+                if(obj.target2 == 0){
+                    p2 = 0
+                }
+                if(obj.target3 == 0){
+                    p3 = 0
+                }
+                console.log("p11111: "+p1)
+                console.log("p2: "+p2)
+                console.log("p3: "+p3)
                 let arr = obj.endTime.split('.')
                 let tmpTime = ""
                 if(arr.length > 1){
@@ -208,13 +244,35 @@ class BFGueListCmt extends Component {
                 let timenum = mouth+"月"+day+"日 "+hour.toString()+":"+minutes.toString()
                 console.log(222222+timenum+ "  "+hour+"   "+minutes+"  "+seconds)
                 console.log((obj.target1+obj.target2+obj.target3).toFixed(4));
+
+
+                let imgc1 = this.getContoryData(obj.team1)
+                let imgc2 = this.getContoryData(obj.team2)
                 return (
                     <div style={{width: '100%', height: '260px', backgroundColor: '#EFF0F4'}}>
                         <div className="div-item">
                             <p className="p-fname">1/8决赛</p>
                             <p className="p-ftime">{timenum}截止</p>
                             <div className="div-competition">
-                                <p className="p-country">{obj.team1} VS {obj.team2}</p>
+                                <div className="con-div">
+                                    <div className="con-div1">
+                                        <div className="con-detail">
+                                        <p className="p-country1">{obj.team1}</p>
+                                        <img className='leftimg' src={imgc1}/>
+                                        </div>
+                                    </div>
+                                    <div className="con-div2">
+                                        <p className="p-country3">VS</p>
+                                    </div>
+                                    <div className="con-div1">
+                                        <p className="p-country2">{obj.team2}</p>
+                                        <img className='rightimg' src={imgc2}/>
+                                    </div>
+                                    {/*<p className="p-country1">{obj.team1} VS {obj.team2}</p>*/}
+                                    {/*<p className="p-country2">{obj.team1} VS {obj.team2}</p>*/}
+                                    {/*<p className="p-country3">{obj.team1} VS {obj.team2}</p>*/}
+                                    {/*<img className='leftimg' src={wulaigui}/>*/}
+                                </div>
                                 <p className="p-number">本场已投注 {(obj.target1+obj.target2+obj.target3).toFixed(4)} ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 0,rowID)}>
@@ -223,18 +281,18 @@ class BFGueListCmt extends Component {
                                 <p className="per-pcarve">瓜分{obj.target1}ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 1,rowID)}>
-                                <p className="per-pbet">{p2}投注</p>
+                                <p className="per-pbet">{p2}%投注</p>
                                 <button className="per-cbcon">平</button>
                                 <p className="per-pcarve">瓜分{obj.target2}ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 2,rowID)}>
-                                <p className="per-pbet">{p3}投注</p>
+                                <p className="per-pbet">{p3}%投注</p>
                                 <button className="per-bcon">{obj.team2}赢</button>
                                 <p className="per-pcarve">瓜分{obj.target3}ETH</p>
                             </div>
                             <Link to={{
-                                    pathname: '/pankoulist',
-                                    query: {obj: obj},
+                                pathname: localStorage.getItem(glo.Uid)?"/pankoulist":"/logincmt",
+                                query: {obj: obj},
                             }}>
                                 <div onClick={this.moreAddreeClick.bind(this)}>
                                     <p className="p-address">本场比赛区块链地址0x{obj.handicapId}</p>
@@ -319,13 +377,46 @@ class BFGueListCmt extends Component {
         </div>
             )
         }
-
+    getContoryData(team){
+        if(team == "英格兰"){
+            return england
+        }
+        else if(team == "乌拉圭"){
+            return wulaigui
+        }
+        else if(team == "法国"){
+            return france
+        }
+        else if(team == "巴西"){
+            return brazil
+        }
+        else if(team == "比利时"){
+            return belgium
+        }
+        else if(team == "瑞典"){
+            return sweden
+        }
+        else if(team == "俄罗斯"){
+            return russia
+        }
+        else if(team == "克罗地亚"){  //乌拉圭、法国、巴西、比利时；俄罗斯、克罗地亚、瑞典、英格兰
+            return croatia
+        }
+        else if(team == '哥伦比亚'){
+            return colombia
+        }
+    }
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/game/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'
+        let url = glo.urlhttp + '/game/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'+'&token='+localStorage.getItem(glo.Token)
         console.log("111:" + url)
         let tmpthis = this;
+        console.log('token：'+localStorage.getItem(glo.Token))
         let config = {
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                // 'Access-Control-Allow-Origin':'*',
+                // 'token':localStorage.getItem(glo.Token),
+                'Content-Type': 'application/json',
+            },
         };  //添加请求头
         axios.get(url,config)
             .then(function (response) {
@@ -348,11 +439,34 @@ class BFGueListCmt extends Component {
                     })
                     console.log("33333 : " + JSON.stringify(response.data.data.content));
                 }
+                else{
+                    let data = [{
+                        da:1,
+                    }];
+                    let dataarr = data
+                    tmpthis.setState({
+                        dataArr:dataarr,
+                        dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                        height: 10,
+                        refreshing: false,
+                        isLoading: false,
+                    })
+                }
             })
             .catch(function (error) {
-
+                let data = [{
+                    da:1,
+                }];
+                let dataarr = data
+                tmpthis.setState({
+                    dataArr:dataarr,
+                    dataSource: tmpthis.state.dataSource.cloneWithRows(dataarr),
+                    height: 10,
+                    refreshing: false,
+                    isLoading: false,
+                })
             });
     }
 }
 
-export default BFGueListCmt;
+export default withRouter(BFGueListCmt);

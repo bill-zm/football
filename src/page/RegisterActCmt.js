@@ -52,7 +52,7 @@ class RegisterActCmt extends Component {
             return
         }
     // /api/v1/register/sms
-        let url = glo.urlhttp + '/user/api/v1/register/sms?phNo='+this.refs.phone.value+'&type=1'
+        let url = glo.urlhttp + '/user/api/v1/register/sms?phNo='+this.refs.phone.value+'&type=1'+'&token='+localStorage.getItem(glo.Token)
         let tmpthis = this;
         let config = {
             headers: {'Content-Type': 'application/json'},
@@ -146,7 +146,7 @@ class RegisterActCmt extends Component {
      );
     }
     submitClick() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/user/api/v1/register'
+        let url = glo.urlhttp + '/user/api/v1/register'//+glo.TokenUrl
         console.log("111:" + url)
 
         if(this.refs.phone.value == ""){

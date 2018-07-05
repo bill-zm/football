@@ -5,7 +5,7 @@
  * Created by zhangmeng on 2018/6/22.
  */
 import React, {Component} from 'react';
-import { Modal, List, Stepper,Button, WhiteSpace, WingBlank ,Toast} from 'antd-mobile';
+import { Modal, List, Stepper,Button, WhiteSpace, WingBlank ,Toast,ActivityIndicator} from 'antd-mobile';
 import './css/logincmt.css'
 import {Link} from 'react-router-dom'
 import axios from 'axios';
@@ -34,7 +34,7 @@ class LoginCmt extends Component {
 
     }
     submitClick(){
-        let url = glo.urlhttp + '/user/api/v1/user/login'  ///user/api/v1/register
+        let url = glo.urlhttp + '/user/api/v1/user/login'///user/api/v1/register
         console.log("111:" + url)
 
         if(this.refs.loginphone.value == ""){
@@ -54,8 +54,13 @@ class LoginCmt extends Component {
             "userName": this.refs.loginphone.value,
         };
         console.log(this.refs.loginpassword.value + this.refs.loginphone.value)
-
-        axios.post(url,data)
+        let config = {
+            headers: {
+                // 'Access-Control-Allow-Origin':'*',
+                'Content-Type': 'application/json',
+            },
+        };  //
+        axios.post(url,data,config)
             .then(function (response) {
                 // taskData = response
                 tmpthis.setState({
@@ -69,6 +74,7 @@ class LoginCmt extends Component {
                     localStorage.setItem(glo.Balance,response.data.data.tbAccount.balance)
                     localStorage.setItem(glo.Spend,response.data.data.tbAccount.spend)
                     localStorage.setItem(glo.Win,response.data.data.tbAccount.win)
+                    localStorage.setItem(glo.Token,response.data.data.token)
                     tmpthis.props.history.goBack()
                 }
                 else{
@@ -80,6 +86,7 @@ class LoginCmt extends Component {
                     localStorage.removeItem(glo.Balance)
                     localStorage.removeItem(glo.Spend)
                     localStorage.removeItem(glo.Win)
+                    localStorage.removeItem(glo.Token)
                 }
             })
             .catch(function (error) {
@@ -88,6 +95,13 @@ class LoginCmt extends Component {
                     animating: false,
                 })
                 if(error != '{}') {
+                    localStorage.removeItem(glo.UserName)
+                    localStorage.removeItem(glo.UserAddress)
+                    localStorage.removeItem(glo.Uid)
+                    localStorage.removeItem(glo.Balance)
+                    localStorage.removeItem(glo.Spend)
+                    localStorage.removeItem(glo.Win)
+                    localStorage.removeItem(glo.Token)
                     glo.showToast('登录失败')
                 }
             });
@@ -114,9 +128,14 @@ class LoginCmt extends Component {
                     <Link to='/registeractcmt'>
                         <p className="p-register">注册</p>
                     </Link>
+
+                <ActivityIndicator
+                    toast
+                    text="正在登录..."
+                    animating={this.state.animating}
+                />
             </div>
         );
     }
-
 }
 export default LoginCmt;

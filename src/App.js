@@ -3,6 +3,8 @@ import './App.css';
 import { TabBar,} from 'antd-mobile';
 import BFGueListCmt from './page/BFGueListCmt'
 import PersonCenterCmt from './page/PersonCenterCmt'
+import * as glo from './utils/globle'
+import axios from 'axios';
 
 class App extends Component {
     constructor(){
@@ -14,6 +16,20 @@ class App extends Component {
         this.state = ({
             selectedTab:selEd,
         })
+        console.log('token'+localStorage.getItem(glo.Token))
+        // axios.defaults.headers = {
+        //     "token": localStorage.getItem(glo.Token),
+        //     'Access-Control-Allow-Origin': '*'
+        // }
+        //
+        // const $axios = axios.create({
+        //     timeout: 5000,
+        //     headers: {
+        //         'token': localStorage.getItem(glo.Token),
+        //     }
+        // });
+        // axios.defaults.headers.common['token'] = localStorage.getItem(glo.Token)
+        // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
     }
   render() {
     return (
