@@ -249,7 +249,7 @@ class PanKouListCmt extends Component {
                             <p className="gp-name">{obj.team1} vs {obj.team2}</p>
                             <p className="gp-number">{teamstr}</p>
                             <p className="gp-time">{timenum1}截止</p>
-                            <p className="gp-state">{str}</p>
+                            {/*<p className="gp-state">{str}</p>*/}
                         </div>
                     </div>
                 </div>

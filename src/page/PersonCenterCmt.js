@@ -79,6 +79,10 @@ class PersonCenterCmt extends Component {
             glo.showToast('超出账户ETH数量')
             return
         }
+        if(parseFloat(value) < 0.005){
+            glo.showToast('提现数量必须大于0.005')
+            return
+        }
         let url = glo.urlhttp + '/eth/api/v1/eth/send?uid='+localStorage.getItem(glo.Uid)+'&value='+value+'&token='+localStorage.getItem(glo.Token)
         let tmpthis = this;
         let config = {
@@ -95,7 +99,7 @@ class PersonCenterCmt extends Component {
                     this.getUserData()
                 }
                 else{
-                    glo.showToast('提现失败')
+                    glo.showToast(response.data.msg)
                 }
                 // tmpthis.rData = genData();
                 // let data = {
@@ -122,7 +126,8 @@ class PersonCenterCmt extends Component {
         return (
             <div style={{backgroundColor:'white',height:'100%'}}>
                 <div className="div-top">
-                    <p className="p-title">个人中心</p>
+                    {/*<p className="p-title">个人中心</p>*/}
+                    <p className="p-title"></p>
                     <img src={defaultImg}/>
                     <Link to='/logincmt'>
                         <div className="btn-login">{this.state.username}</div>

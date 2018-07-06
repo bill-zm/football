@@ -127,14 +127,21 @@ class GuessRecordCmt extends Component {
                         teamstr = "我已投注" + obj.target3Num + "个ETH压" + obj.team2 + "赢"
                     }
                     let str = ""
-                    // public static final byte STATUS_FREEZE = 1;
+                    let strColor = ""
+            // public static final byte STATUS_FREEZE = 1;
                     // public static final byte STATUS_NORMAL = 0;
                     // public static final byte STATUS_RESULT = 2
                     if (obj.status == 0) {
                         str = '竞猜中'
+                        strColor = 'brown'
                     }
-                    else {
-                        str = '已结束'
+                    else if (obj.status == 1){
+                        str = '未猜中'
+                        strColor = '#999'
+                    }
+                    else if (obj.status == 2){
+                        str = '已中奖'
+                        strColor = '#6b56f7'
                     }
                     let arr = obj.startTime.split('.')
                     let tmpTime = ""
@@ -233,7 +240,7 @@ class GuessRecordCmt extends Component {
                                     <p className="gp-name">{obj.team1} vs {obj.team2}</p>
                                     <p className="gp-number">{teamstr}</p>
                                     <p className="gp-time">{timenum1}截止</p>
-                                    <p className="gp-state">{str}</p>
+                                    <p className="gp-state" style={{color:strColor}}>{str}</p>
                                 </div>
                             </div>
                         </div>

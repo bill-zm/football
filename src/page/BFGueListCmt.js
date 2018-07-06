@@ -41,7 +41,7 @@ class BFGueListCmt extends Component {
             useBodyScroll: true,
             modal2:false,
             modal1:false,
-            val:0.01,
+            val:0.00001,
         };
     }
 
@@ -68,10 +68,10 @@ class BFGueListCmt extends Component {
             // glo.showToast('请先登录')
             return
         }
-        if(parseFloat(this.state.val) > parseFloat(localStorage.getItem(glo.Balance))){
-            glo.showToast('超出账户ETH数量')
-            return
-        }
+        // if(parseFloat(this.state.val) > parseFloat(localStorage.getItem(glo.Balance))){
+        //     glo.showToast('超出账户ETH数量')
+        //     return
+        // }
         let url = glo.urlhttp + '/game/api/v1/fbg/game/bet?'+'token='+localStorage.getItem(glo.Token)//+glo.TokenUrl  ///user/api/v1/register
         let data
         let obj = this.state.dataArr[selectNum]
@@ -116,7 +116,7 @@ class BFGueListCmt extends Component {
                 }
                 else{
                     console.log("111"+response.data.code);
-                    glo.showToast('投注失败')
+                    glo.showToast(response.data.msg)
                 }
             })
             .catch(function (error) {
@@ -189,10 +189,9 @@ class BFGueListCmt extends Component {
                 )
             }
             else {
-
-                let p1 = (obj.target1/(obj.target1+obj.target2+obj.target3)).toFixed(2)
-                let p2 = (obj.target2/(obj.target1+obj.target2+obj.target3)).toFixed(2)
-                let p3 = (obj.target3/(obj.target1+obj.target2+obj.target3)).toFixed(2)
+                let p1 = parseInt((obj.target1/(obj.target1+obj.target3)) * 100)
+                let p2 = parseInt((obj.target2/(obj.target1+obj.target3)) * 100)
+                let p3 = parseInt((obj.target3/(obj.target1+obj.target3)) * 100)
                 if(obj.target1 == 0){
                     p1 = 0
                 }
@@ -202,10 +201,15 @@ class BFGueListCmt extends Component {
                 if(obj.target3 == 0){
                     p3 = 0
                 }
+                if(p1+p3 != 100){
+                    if(p1 != 0 && p3 != 0){
+                        p3 = 100 - p1
+                    }
+                }
                 console.log("p11111: "+p1)
                 console.log("p2: "+p2)
                 console.log("p3: "+p3)
-                let arr = obj.endTime.split('.')
+                let arr = obj.startTime.split('.')
                 let tmpTime = ""
                 if(arr.length > 1){
                     tmpTime = arr[0].replace(" ","T")
@@ -224,10 +228,10 @@ class BFGueListCmt extends Component {
                 }
                 day = d.getDate()+""
                 if(d.getHours() < 10){
-                    hour = "0"+d.getHours()
+                    hour = "0"+(d.getHours()-2)
                 }
                 else{
-                    hour = ""+d.getHours()
+                    hour = ""+(d.getHours()-2)
                 }
                 if(d.getMinutes() < 10){
                     minutes = "0"+d.getMinutes()
@@ -251,7 +255,7 @@ class BFGueListCmt extends Component {
                 return (
                     <div style={{width: '100%', height: '260px', backgroundColor: '#EFF0F4'}}>
                         <div className="div-item">
-                            <p className="p-fname">1/8决赛</p>
+                            <p className="p-fname">{obj.title}</p>
                             <p className="p-ftime">{timenum}截止</p>
                             <div className="div-competition">
                                 <div className="con-div">
@@ -273,22 +277,22 @@ class BFGueListCmt extends Component {
                                     {/*<p className="p-country3">{obj.team1} VS {obj.team2}</p>*/}
                                     {/*<img className='leftimg' src={wulaigui}/>*/}
                                 </div>
-                                <p className="p-number">本场已投注 {(obj.target1+obj.target2+obj.target3).toFixed(4)} ETH</p>
+                                <p className="p-number">本场已投注 {(obj.target1+obj.target3).toFixed(5)} ETH</p>
                             </div>
                             <div className="div-percent" onClick={this.betClick.bind(this, 0,rowID)}>
                                 <p className="per-pbet">{p1}%投注</p>
                                 <button className="per-bcon">{obj.team1}赢</button>
-                                <p className="per-pcarve">瓜分{obj.target1}ETH</p>
+                                <p className="per-pcarve">瓜分{obj.target3}ETH</p>
                             </div>
-                            <div className="div-percent" onClick={this.betClick.bind(this, 1,rowID)}>
-                                <p className="per-pbet">{p2}%投注</p>
-                                <button className="per-cbcon">平</button>
-                                <p className="per-pcarve">瓜分{obj.target2}ETH</p>
-                            </div>
+                            {/*<div className="div-percent" onClick={this.betClick.bind(this, 1,rowID)}>*/}
+                                {/*<p className="per-pbet">{p2}%投注</p>*/}
+                                {/*<button className="per-cbcon">平</button>*/}
+                                {/*<p className="per-pcarve">瓜分{obj.target2}ETH</p>*/}
+                            {/*</div>*/}
                             <div className="div-percent" onClick={this.betClick.bind(this, 2,rowID)}>
                                 <p className="per-pbet">{p3}%投注</p>
                                 <button className="per-bcon">{obj.team2}赢</button>
-                                <p className="per-pcarve">瓜分{obj.target3}ETH</p>
+                                <p className="per-pcarve">瓜分{obj.target1}ETH</p>
                             </div>
                             <Link to={{
                                 pathname: localStorage.getItem(glo.Uid)?"/pankoulist":"/logincmt",
@@ -339,7 +343,7 @@ class BFGueListCmt extends Component {
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
             >
                 <div style={{ textAlign:'left',height: '220px', lineHeight:'20px',color:'#262626',fontSize:'12px',overflow: 'scroll' }}>
-                    1.每场比赛最多参与3次，每次不限选项。每次投注最低0.01ETH，最高10ETH。<br />
+                    1.每场比赛最多参与3次，每次不限选项。每次投注最低0.00001ETH，最高1000ETH。<br />
                     2.猜中比赛结果则赢得本场竞猜，未猜中则输掉ETH；赢家按照投注占比赢取ETH<br />
                     3.派奖计算计算公式：用户A赢取ETH数 = 用户A投注ETH x (1 + 所有未猜中用户投注ETH总数/所有猜中投注ETH总数)<br />
                     4.若比赛取消或因特殊情况未能确定比赛结果，投注ETH全部退回<br />
@@ -361,8 +365,8 @@ class BFGueListCmt extends Component {
                                 style={{ width: '100%', minWidth: '100px' }}
                                 showNumber
                                 max={1000}
-                                min={0.01}
-                                step={0.01}
+                                min={0.00001}
+                                step={0.00001}
                                 value={this.state.val}
                                 onChange={this.onChange}
                             />}
@@ -407,7 +411,7 @@ class BFGueListCmt extends Component {
         }
     }
     getTaskList() {  ///api/v1/executions?status=REVIEWED_APPROVE&userId=13826666362
-        let url = glo.urlhttp + '/game/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=3'+'&token='+localStorage.getItem(glo.Token)
+        let url = glo.urlhttp + '/game/api/v1/fbg/handicap/handicaps?offset=0&limit=1000&status=0'+'&token='+localStorage.getItem(glo.Token)
         console.log("111:" + url)
         let tmpthis = this;
         console.log('token：'+localStorage.getItem(glo.Token))

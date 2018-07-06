@@ -31,7 +31,7 @@
 }
 .div-percent{
     height: 80px;
-    width: 33%;
+    width: 50%;
     float: left;
     margin-top: 130px;
 }
@@ -72,9 +72,9 @@
     height: 10px;
 }
 .per-bcon{
-    margin-left: 13%;
-    margin-right: 13%;
-    width: 74%;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
     height: 35px;
     font-size: 13px;
     background-color: #6b56f7;
