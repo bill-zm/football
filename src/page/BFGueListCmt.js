@@ -41,7 +41,7 @@ class BFGueListCmt extends Component {
             useBodyScroll: true,
             modal2:false,
             modal1:false,
-            val:0.00001,
+            val:0.01,
         };
     }
 
@@ -249,6 +249,9 @@ class BFGueListCmt extends Component {
                 console.log(222222+timenum+ "  "+hour+"   "+minutes+"  "+seconds)
                 console.log((obj.target1+obj.target2+obj.target3).toFixed(4));
 
+                if(rowID == 1){
+                    timenum = "开球前半小时"
+                }
 
                 let imgc1 = this.getContoryData(obj.team1)
                 let imgc2 = this.getContoryData(obj.team2)
@@ -343,7 +346,7 @@ class BFGueListCmt extends Component {
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
             >
                 <div style={{ textAlign:'left',height: '220px', lineHeight:'20px',color:'#262626',fontSize:'12px',overflow: 'scroll' }}>
-                    1.每场比赛最多参与3次，每次不限选项。每次投注最低0.00001ETH，最高1000ETH。<br />
+                    1.每场比赛最多参与3次，每次不限选项。每次投注最低0.01ETH，最高1000ETH。<br />
                     2.猜中比赛结果则赢得本场竞猜，未猜中则输掉ETH；赢家按照投注占比赢取ETH<br />
                     3.派奖计算计算公式：用户A赢取ETH数 = 用户A投注ETH x (1 + 所有未猜中用户投注ETH总数/所有猜中投注ETH总数)<br />
                     4.若比赛取消或因特殊情况未能确定比赛结果，投注ETH全部退回<br />
@@ -365,8 +368,8 @@ class BFGueListCmt extends Component {
                                 style={{ width: '100%', minWidth: '100px' }}
                                 showNumber
                                 max={1000}
-                                min={0.00001}
-                                step={0.00001}
+                                min={0.01}
+                                step={0.01}
                                 value={this.state.val}
                                 onChange={this.onChange}
                             />}

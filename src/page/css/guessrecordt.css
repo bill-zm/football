@@ -41,6 +41,21 @@
     width: 50%;
     float: left;
 }
+.gptitleall-p{
+    text-align: center;
+    font-size: 15px;
+    color: #CB423F;
+    line-height: 10px;
+    font-weight:500;
+}
+.gpnumall-p{
+    margin-top: 40px;
+    text-align: center;
+    font-size: 15px;
+    color: #CB423F;
+    line-height: 10px;
+    font-weight:500;
+}
 .gptitle-p{
     text-align: center;
     font-size: 11px;

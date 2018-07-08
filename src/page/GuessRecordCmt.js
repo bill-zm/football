@@ -91,8 +91,8 @@ class GuessRecordCmt extends Component {
                                 <p className="gptitle-p">押注总ETH</p>
                             </div>
                             <div className="gpdiv-top">
-                                <p className="gpnum-p">{localStorage.getItem(glo.Win)}</p>
-                                <p className="gptitle-p">赢得总ETH</p>
+                                <p className="gpnumall-p">{localStorage.getItem(glo.Win)}</p>
+                                <p className="gptitleall-p">赢得总ETH</p>
                             </div>
                         </div>
                             <div style={{width: '100%', height: '50px', backgroundColor: 'white'}}>

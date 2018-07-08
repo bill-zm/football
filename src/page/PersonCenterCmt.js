@@ -75,10 +75,10 @@ class PersonCenterCmt extends Component {
             glo.showToast('请先输入ETH数量')
             return
         }
-        if(parseFloat(value) > parseFloat(localStorage.getItem(glo.Balance))){
-            glo.showToast('超出账户ETH数量')
-            return
-        }
+        // if(parseFloat(value) > parseFloat(localStorage.getItem(glo.Balance))){
+        //     glo.showToast('超出账户ETH数量')
+        //     return
+        // }
         if(parseFloat(value) < 0.005){
             glo.showToast('提现数量必须大于0.005')
             return
@@ -163,7 +163,8 @@ class PersonCenterCmt extends Component {
                     footer={[{ text: '确定', onPress: () => { console.log('ok'); this.onClose('modal1')(); } ,style:{marginLeft:'15px',marginRight:'15px',marginBottom:'10px',borderRadius:'20px',lineHeight:'40px',height:'40px',backgroundColor:'#6b56f7',color:'white'}}]}
                     wrapProps={{ onTouchStart: this.onWrapTouchStart }}
                 >
-                    <div style={{ textAlign:'center',height: '260px',color:'#262626',fontSize:'12px',overflow: 'scroll' }}>
+                    <div style={{ textAlign:'center',height: '300px',color:'#262626',fontSize:'12px',overflow: 'scroll' }}>
+                        <p style={{color:'red'}}>请务必从注册的钱包地址转入</p>
                         <QRCode
                             value='0x16F7498C95A57669209D9B2Cdc9ad98b8386b87b'  //0x87bC630F9aaC634EBFf4A0adAf2d4Ec9Fe36519D
                             size={this.state.size}

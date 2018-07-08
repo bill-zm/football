@@ -2,7 +2,7 @@
  * Created by zhangmeng on 2018/6/7.
  */
 import React, {Component} from 'react';
-import { Modal, List, Stepper,Button, WhiteSpace, WingBlank ,Toast} from 'antd-mobile';
+import { Modal, List, Stepper,Button, WhiteSpace, WingBlank ,Toast} from 'antd-mobile'; //47.52.226.34
 
 export const urlhttp  = "http://47.52.226.34:8090";  //"http://192.168.1.125:8090";//
 export const UserName = "UserName"
